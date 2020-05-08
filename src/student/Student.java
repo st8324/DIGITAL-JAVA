@@ -16,7 +16,16 @@ public class Student {
 		if(!this.name.equals(name))	return false;
 		return true;
 	}
+	public boolean equal(Student s) {
+		if(this.grade != s.grade)	return false;
+		if(this.classNum != s.classNum) return false;
+		if(this.num != s.num) return false;
+		return true;
+	}
 	
+	public Subject[] getScore() {
+		return score;
+	}
 	//getter, setter 설정
 	public String getName() {
 		return name;
@@ -47,11 +56,27 @@ public class Student {
 		for(int i = 0 ; i<score.length; i++) {
 			//this.score[i] = score[i];
 			this.score[i] = new Subject(score[i]);
+			this.score[i] = score[i];
 		}
 	}
 	public void printScore() {
+		if(score == null) return;
 		for(Subject tmp : score) {
 			tmp.print();
 		}
+	}
+	public void addScore(Subject[] addscore) {
+		int aSize = 0, bSize = 0 ;
+		if(score != null)	aSize=score.length;
+		if(addscore != null)bSize=addscore.length;
+		
+		Subject []tmp = new Subject[aSize + bSize];
+		for(int i=0; i<aSize; i++) {
+			tmp[i] = score[i];
+		}
+		for(int j=0; j<bSize; j++) {
+			tmp[aSize+j] = addscore[j];
+		}
+		score = tmp;
 	}
 }
