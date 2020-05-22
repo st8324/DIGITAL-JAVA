@@ -9,13 +9,25 @@ public class CashbookMain {
 	public static void main(String[] args) {
 		List<CashBook> list = new ArrayList<CashBook>();
 		Scanner scan = new Scanner(System.in);
-		CashBook cashBook = inputCashBook(scan);
-		registerCashBook(list, cashBook);
-		cashBook = inputCashBook(scan);
-		registerCashBook(list, cashBook);
-		cashBook = inputCashBook(scan);
-		registerCashBook(list, cashBook);
-		System.out.println(list);
+		registerCashBook(list, 
+				new CashBook(1, "2020-05-22", "식비", "점심", 5000));
+		registerCashBook(list, 
+				new CashBook(1, "2020-05-21", "식비", "점심", 5000));
+		registerCashBook(list, 
+				new CashBook(1, "2020-05-22", "교통비", "버스", 1400));
+		registerCashBook(list, 
+				new CashBook(0, "2020-05-22", "월급", "청주학원", 1400));
+		int cnt = 1;
+		for(CashBook tmp : list) {
+			System.out.println(cnt++ +"." + tmp);
+		}
+		modifyCashBook(list, 4, 
+				new CashBook(1, "2020-05-23", "식비", "점심", 5000));
+		cnt = 1;
+		for(CashBook tmp : list) {
+			System.out.println(cnt++ +"." + tmp);
+		}
+		scan.close();
 	}
 	/* 기능 : 주어진 가계부 내역(CashBook)을 가계부(list)에 저장하는 메소드 
 	 * 매개변수 : 가계부, 가계부 내역 => List<CashBook> list, CashBook cashBook
@@ -115,8 +127,27 @@ public class CashbookMain {
 					searchList.add(tmp);
 			}
 			return searchList;
+		case 3:
+			for(CashBook tmp : list) {
+				if(tmp.getType().equals(search))
+					searchList.add(tmp);
+			}
+			return searchList;
 		}
 		return null;
+	}
+	/* 기능 : 가계부에서 수정할 위치를 알려주면 수정 항목으로 수정하는 메소드
+	 * 리턴타입 : 수정 여부 => boolean
+	 * 메소드명 : modifyCashBook
+	 * 매개변수 : 가계부, 수정할 위치, 수정항목 => List<CashBook>list, int index, CashBook cashBook
+	 * */
+	public static boolean modifyCashBook(List<CashBook>list, int index, CashBook cashBook) {
+		if(list == null || cashBook == null || list.size() < index)
+			return false;
+		//list.set(index-1, cashBook);
+		list.remove(index-1);
+		registerCashBook(list, cashBook);
+		return true;
 	}
 }
 
