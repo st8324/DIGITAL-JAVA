@@ -5,29 +5,94 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CashbookMain {
-
+	
 	public static void main(String[] args) {
 		List<CashBook> list = new ArrayList<CashBook>();
+		List<CashBook> subList = null;	//확인할 리스트
+		CashBook cashBook = null;
 		Scanner scan = new Scanner(System.in);
-		registerCashBook(list, 
-				new CashBook(1, "2020-05-22", "식비", "점심", 5000));
-		registerCashBook(list, 
-				new CashBook(1, "2020-05-21", "식비", "점심", 5000));
-		registerCashBook(list, 
-				new CashBook(1, "2020-05-22", "교통비", "버스", 1400));
-		registerCashBook(list, 
-				new CashBook(0, "2020-05-22", "월급", "청주학원", 1400));
-		int cnt = 1;
-		for(CashBook tmp : list) {
-			System.out.println(cnt++ +"." + tmp);
-		}
-		modifyCashBook(list, 4, 
-				new CashBook(1, "2020-05-23", "식비", "점심", 5000));
-		cnt = 1;
-		for(CashBook tmp : list) {
-			System.out.println(cnt++ +"." + tmp);
-		}
-		scan.close();
+		int index=0;	//수정할 때 리스트에서 수정할 위치
+		int menu;		//메뉴
+		int kind = -1;	//가계부 확인 시 종류
+		char subMenu;	//서브 메뉴
+		String search;	//
+		do {
+			menu = printMenu(scan);
+			switch(menu) {
+			case 1:
+				cashBook = inputCashBook(scan);
+				System.out.println("──────────────────────────────");
+				if(registerCashBook(list, cashBook)) 
+					System.out.println("가계내역을 등록했습니다.");	
+				else
+					System.out.println("가계내역 등록에 실패했습니다.");
+				System.out.println("──────────────────────────────");
+				break;
+			case 2:
+				System.out.println("──────────────────────────────");
+				for(int i = 0; i<list.size(); i++) {
+					System.out.println(i+1+". "+list.get(i));
+				}
+				System.out.println("──────────────────────────────");
+				do{
+					System.out.print("수정할 가계 내역을 선택하세요 : ");
+					index = scan.nextInt();
+					System.out.println(list.get(index-1) +" 항목이 맞습니까?(y/n)");
+					subMenu = scan.next().charAt(0);
+				}while(subMenu == 'n');
+				cashBook = inputCashBook(scan);
+				System.out.println("──────────────────────────────");
+				if(modifyCashBook(list, index, cashBook)) 
+					System.out.println("가계내역을 등록했습니다.");	
+				else
+					System.out.println("가계내역 등록에 실패했습니다.");
+				System.out.println("──────────────────────────────");
+				break;
+			case 3:
+				System.out.println("──────────────────────────────");
+				System.out.println("1. 일시 ");
+				System.out.println("2. 수입/지출 ");
+				System.out.println("3. 분류");
+				System.out.println("──────────────────────────────");
+				do{
+					System.out.print("기준을 선택하세요 : ");
+					kind = scan.nextInt();
+				}while(kind > 3 || kind < 1);
+				System.out.print("검색어를 입력하세요 : ");
+				while((search = scan.nextLine()).trim().length() == 0);
+				
+				subList = searchCashBook(list, kind, search);
+				System.out.println("──────────────────────────────");
+				if(subList != null)
+					for(int i = 0; i<subList.size(); i++) {
+						System.out.println(i+1+". "+subList.get(i));
+					}
+				else
+					System.out.println("검색된 내역이 없습니다.");
+				System.out.println("──────────────────────────────");
+				break;
+			case 4:
+				System.out.println("──────────────────────────────");
+				System.out.println("프로그램을 종료합니다.");
+				System.out.println("──────────────────────────────");
+				return;
+			default:
+				System.out.println("잘못된 메뉴입니다.");
+			}
+		}while(true);
+		
+	}
+	public static int printMenu(Scanner scan) {
+		System.out.println("┌─────────────────────────────");
+		System.out.println("│1  가계내역 등록                   ");
+		System.out.println("│2  가계내역 수정                   ");
+		System.out.println("│3  가계내역 확인                   ");
+		System.out.println("│4  프로그램 종료                   ");
+		System.out.println("└─────────────────────────────");
+		System.out.print("메뉴를 선택하세요 : ");
+		int menu = scan.nextInt();
+		System.out.println("──────────────────────────────");
+		return menu;
 	}
 	/* 기능 : 주어진 가계부 내역(CashBook)을 가계부(list)에 저장하는 메소드 
 	 * 매개변수 : 가계부, 가계부 내역 => List<CashBook> list, CashBook cashBook
@@ -122,6 +187,7 @@ public class CashbookMain {
 				return null;
 			}
 			boolean isIncome = search.equals("수입"); 
+			if(list == null || list.size() == 0 ) return null;
 			for(CashBook tmp : list) {
 				if(tmp.isIncome() == isIncome)
 					searchList.add(tmp);
