@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- select 태그 : 생년월일을 선택할 때, 게시글의 검색 분류
+	 등과 같이 미리 지정된 값들을 선택할 때 사용 
+	 option 태그와 같이 사용, option는 미리 지정된 값,
+	 select 태그도 input 태그와 같이 form태그 안에서 사용 됨 
+	 value 속성을 입력하지 않으면 option태그 사이에 있는 문자열이
+	 value에 저장 됨, 초기 선택된 값을 설정하려면 option태그에 
+	 selected 속성을 이용,
+	 selected 속성이 없으면 첫번째 option태그가 선택-->
+	<form>
+		<select name="year">
+			<option value="">출생년도</option>
+			<option value="2008" selected>2008</option>
+			<option>2009</option>
+			<option value="2010">2010</option>
+		</select>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>
