@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- a 태그 : 다른 url 이동하는 태그 , inline 태그
+		href 속성 : 이동할 url
+		현재 페이지와 같은 홈페이지내의 다른 페이인 경우와
+		현제 페이지와 다른 홈페이지를 이동하는 경우 : http://를 
+		추가하거나 //를 추가해야한다.
+	-->
+	<a href="/day30/texttag.html">text 태그 예제1</a> <br>
+	<a href="./texttag.html">text 태그 예제2</a> <br>
+	<a href="http://www.naver.com">네이버1</a> <br>
+	<a href="//www.naver.com">네이버2</a> <br>
+	<!-- a태그의 target 속성 -->
+	<!-- target 속성값이 _self인 경우 : 기본값 -->
+	<a href="//www.naver.com" target="_self">네이버 target : _self</a> <br>
+	<!-- target 속성값이 _blank인 경우 : 다른 창에서 링크를 염 -->
+	<a href="//www.naver.com" target="_blank">네이버 target : _blank</a> <br>
+	<!-- target 속성값이 _parent인 경우 : 부모창에서 링크를 염.
+	부모가 없는 경우 _self와 같음 -->
+	<a href="//www.naver.com" target="_parent">네이버 target : _parent</a> <br>
+	<!-- target 속성값이 _top인 경우 : 최고 조상에서 링크를 염.
+	부모가 없는 경우 _self와 같음 -->
+	<a href="//www.naver.com" target="_top">네이버 target : _top</a> <br>
+	<!-- download 속성을 추가하면 해당 링크로 이동하는 것이 아니라
+		다운로드를 함 -->
+	<a href="dog.jpg" download="" target="_blank">강아지 이미지</a> <br>
+	<!--  전화번호 연결 -->
+	<a href="tel:+821012345678">010-1234-5678</a>
+</body>
+</html>
