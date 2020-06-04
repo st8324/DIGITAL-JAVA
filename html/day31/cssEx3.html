@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		div{
+			color: red;
+			color: #ff0000;
+			color: #f00;
+			color: rgb(255,0,0);/*빨강, 녹색, 파랑*/
+			/*빨강, 녹색, 파랑, 투명도: 0~1, 0이면 투명, 1이면 불투명*/
+			color: rgba(255,0,0,1);
+			/* color: hsl(); 색조, 채도, 밝기*/
+			background-color: yellow;
+			border-color: blue;
+			border-width: 1px;
+			border-style: solid;
+			/* 들여쓰기 */
+			text-indent: 15px;
+			/* 정렬 : left | right | center | justify */
+			text-align: center;
+			/* 텍스트 꾸미기 : none | underline(밑줄) | overline(윗줄) | line-through(취소선) */
+			text-decoration: underline;
+			/*
+			css에서 사용하는 단위
+			em : 현재 font의 배수, 부모 폰트의 배수
+			rem : 해당 문서의 기본 폰트 크기의 배수
+			% : 퍼센트
+			px : 픽셀수(가장 많이 사용)
+			cm,mm 
+			in : 인치
+			pt : 포인터 1pt = 1/72in
+			pc : 피카소 1pc = 12pt
+			deg : 각도
+			*/
+			/* 폰트의 종류를 선택하는 font-family 
+			font-family : 폰트1, 폰트2, 폰트3;
+			*/
+			font-family: Arial, "Times New Roman", serif;
+			/* font 크기 */
+			font-size: 16px;
+			/* font 스타일 */
+			font-style: italic;
+			/* font 굵기 : 100~900사이의 숫자, 100단위로 표현, bold는 700을 의미 */
+			font-weight: bold;
+			/* font : 폰트 스타일, 폰트 굵기, 폰트 크기, 폰트 페밀리
+			순서대로 지정해야함, 폰트 크기와 폰트 패밀리를 제외한 속성은 생략 가능 */
+			font: italic bold 16px Arial, "Times New Roman", serif ;
+		}
+		a{	text-decoration: none;	}
+	</style>
+</head>
+<body>
+	<div>안녕하세요. 제 이름은 홍길동입니다. 만나서 반갑습니다.</div>
+	<a href="//naver.com" class="naver">네이버</a>
+</body>
+</html>
