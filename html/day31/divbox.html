@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>박스 예제</title>
+	<style>
+		div{
+			background-color: green;
+			margin-top: 50px;
+			margin-left: 50px;
+			margin-right: 50px;
+			margin-bottom: 50px;
+
+			border-top-width: 1px;
+			border-right-width: 1px;
+			border-width: 1px;/* 모든 테두리의 두께를 1px*/
+			
+			/* 위를 기준으로 시계방향으로 위는 1px, 오른쪽 2px, 아래쪽 3px, 왼쪽 4px*/
+			border-width: 1px 2px 3px 4px;
+			/* 위를 기준으로 시계방향으로 위는 1px, 오른쪽 2px, 아래쪽 3px, 왼쪽 2px*/
+			border-width: 1px 2px 3px;
+			/* 위를 기준으로 시계방향으로 위는 1px, 오른쪽 2px, 아래쪽 1px, 왼쪽 2px*/
+			border-width: 1px 2px;
+
+			border-top-color: red;
+			border-color: red blue blueviolet black;
+
+			border-top-style: solid;
+			border-style: solid dotted double ridge;
+
+			border : 1px solid red;
+			border-top: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<div>안녕<br><br><br><br></div>
+	안녕하세요.
+</body>
+</html>
