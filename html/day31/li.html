@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 리스트는 상위/하위 목록으로 구성되어 있는 상황을 나타낼때 사용 
+		ol : 순서가 있는 리스트(번호로 표현되는), block태그
+		ul : 순서가 없는 리스트, block태그
+		li : ol이나 ul 태그 안에 들어가서 하위목록을 의미하는 태그, block태그
+	-->
+	<!-- 
+	 ol태그의 type 속성
+	 - "1" : 기본값
+	 - "A", "a", "I", "i" 
+	 ol태그의 start 속성 : 시작번호-->
+	오늘의 할일
+	<ol type="I" start="3">
+		<li>등원</li>
+		<li>공부</li>
+		<li>점심</li>
+		<li>공부</li>
+		<li>하원</li>
+	</ol>
+	<!-- 
+		ul태그 type속성
+		 - disc : 기본
+		 - circle : 안이 빈 원
+		 - square : 사각형
+	 -->
+	<ul type="circle">
+		<li>등원</li>
+		<li>공부</li>
+		<li>점심</li>
+		<li>공부</li>
+		<li>하원</li>
+	</ul>
+	<ul>
+		<li>메뉴1
+			<ul>
+				<li>서브메뉴1-1</li>
+				<li>서브메뉴1-2</li>
+				<li>서브메뉴1-3</li>
+			</ul>
+		</li>
+		<li>메뉴2
+			<ul>
+				<li>서브메뉴2-1</li>
+				<li>서브메뉴2-2</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
