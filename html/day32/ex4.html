@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+		}
+		.box{
+			border: 1px solid red;
+			box-sizing: border-box;
+			margin-top: 10px;
+		}
+		.box1{
+			height: 100px;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+		.box2{
+			height: 200px;
+			width: calc(50% - 15px);
+			float: left;
+			margin-left: 10px;
+		}
+		.box3{
+			height: 200px;
+			width: calc(50% - 15px);
+			float: right;
+			margin-right: 10px;
+		}
+		body::after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+</body>
+</html>
