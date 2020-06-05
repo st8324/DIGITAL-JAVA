@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			/* display 속성 값
+			 - inline, block, inline-block, none */
+			display: block;
+			/* float는 엔터에 의한 여백을 없애주고, 왼쪽이나 오른쪽으로
+			붙여준다. 단 부모랑 따로 노는 문제점이 발생 */
+			float: left;
+		}
+		/* block 태그들은 컨텐츠(자식)의 크기가 본인의 크기가 된다 */
+		body{
+			border: 1px solid red;
+		}
+		body::after{
+			clear: both;
+			content: "";
+			display: block;
+		}
+		/*
+		body{
+			font-size: 0px;
+		}
+		body>*{
+			font-size: 16px;
+		}
+		*/
+	</style>
+</head>
+<body>
+	<div class="box">1</div>
+	<div class="box">2</div>
+	<div class="box">3</div>
+	<div class="box">4</div>
+</body>
+</html>
