@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		/* 배경 이미지 
+		url() : 파일을 가져오는 함수*/
+		.box{
+			width: 500px;
+			height: 500px;
+			margin: 0 auto;
+			background-image: url('../day30/dog.jpg');
+			/* background-position은 주로 여러 이미지가 하나로 된 
+			이미지 파일을 원하는 부분만 잘라서 쓸 때 사용이 됨 */
+			background-position: center center;
+			/* no-repeat : 반복 x
+				 repeat-x : x축 반복
+				 repeat-y : y축 반복
+				 repeat : x,y축 반복
+			 */
+			background-repeat: no-repeat;
+			/* 배경이미지의 가로크기와 세로 크기를 설정
+				contain : 배경이미지의 가로, 세로 모두 요소보다 작다는
+				조건하에 가능한 크게 조정, 이미지의 가로,세로 비율은 유지
+				cover : 배경이미지의 가로, 세로 모두 요소보다 크다는 조건
+				하에 가능한 작제 조정, 가로, 세로 비율은 유지*/
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
