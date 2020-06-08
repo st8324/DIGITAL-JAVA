@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 40%;
+			background-color: yellow;
+			height: 50px;
+			display: block;
+			float: left;
+		}
+		.box:nth-of-type(2){
+			background-color: green;
+		}
+		body::after{
+			clear: both;
+			content: '';
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+</html>
