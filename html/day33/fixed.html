@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>position:fixed</title>
+	<style>
+		body{
+			height: 2000px;
+		}
+		.box{
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			border: 1px solid black;
+			display: inline-block;
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+		}
+	</style>
+</head>
+<!-- 속성값 입력시 ""를 안써도 되지만 띄어쓰기가 들어가는
+경우 인식을 못함(클래스 속성) -->
+<body id="body">
+	<a href="#body" class="box">위로</a>
+</body>
+</html>

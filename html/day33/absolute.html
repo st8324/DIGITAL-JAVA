@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>position:absolute</title>
+	<style>
+		div{
+			/* 모든 태그의 기본 position값은 static */
+			height: 150px;
+			width: 150px;
+			line-height: 150px;
+			text-align: center;
+			font-size: 30px;
+			background-color: yellow;
+			border: 1px solid black;
+		}
+		.absolute{
+			/* position : absolute는 본인과 가장 가까운 조상 중에서
+			position이 relative인 조상을 기준으로 한다. 없으면
+			브라우저 화면을 기준으로,
+			top은 위에서 아래로 박스가 배치되도록, bottom은 아래에서 위로
+			박스가 배치되도록, left : 왼쪽에서 오른쪽으로 박스가 배치
+			되도록, right : 오른쪽에서 왼쪽으로 박스가 배치되도록
+			부호가 -면 반대 방향으로 */
+			position: absolute;
+			bottom:  -50px;
+			right: 0;
+		}
+		.box{
+			position: relative;
+			width: 100%;
+			height: 200px;
+			background-color: green;
+		}
+		.in-box:nth-of-type(1){
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.in-box:nth-of-type(2){
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>1번 박스</div>
+	<div>2번 박스</div>
+	<div class="absolute">3번 박스</div>
+	<div class="box">
+		<div class="in-box"></div>
+		<div class="in-box"></div>
+	</div>
+</body>
+</html>
