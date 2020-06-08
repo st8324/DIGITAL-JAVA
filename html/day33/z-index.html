@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>z-index</title>
+	<style>
+		/* z-index는 한 지점에 여러 요소가 겹쳐 있는 경우
+		어떤 요소를 위로 보내고 어떤 요소를 아래로 보낼건지 결정하는
+		속성 */
+		/* z-index를 설정하지 않으면 코드가 나중에 온 요소가 위로 간다 
+		일반적으로 z-index가 높으면 위로 올라가지만 z-index 높아도
+		아래로 가는 경우 있는데, position이 다른 경우 z-index값과
+		상관없이 아래로 가는 경우가 있다.
+		div와 img태그는 div의 index값이 높아도 img태그가 위에 있음
+		*/
+		body{
+			margin: 0;
+		}
+		.box{
+			width: 200px;
+			height: 400px;
+			background-color: white;
+			border: 1px solid black;
+			display: inline-block;
+			z-index: 10;
+		}
+		.box1{
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			z-index: 9;
+		}
+		.box2{
+			position: absolute;
+			top: 60px;
+			left: 60px;
+			z-index: 8;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+</body>
+</html>
