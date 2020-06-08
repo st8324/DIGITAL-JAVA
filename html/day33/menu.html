@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>메뉴바</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			height: 50px;
+			overflow: hidden;
+			background-color: ghostwhite;
+		}
+		li{
+			list-style-type: none;
+			box-sizing: border-box;
+			width: calc(100% / 3);
+			float: left;
+			line-height: 50px;
+			text-align: center;
+			height: 100%;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+			width: 100%;
+			display: block;
+			height: 100%;
+			border: 1px solid black;
+			box-sizing: border-box;
+		}
+	li:nth-child(1)>a,
+	li:nth-child(2)>a{
+		border-right: none;
+	}
+	a:hover,
+	li:hover,
+	nav li>a:hover{
+		color: red;
+		background-color: gainsboro;
+	}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
