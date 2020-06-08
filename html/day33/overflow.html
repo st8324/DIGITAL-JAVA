@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>overflow</title>
+	<style>
+		body{
+			height: 500px;
+			border: 1px solid red;
+		}
+		.box{
+			height: 600px;
+			border: 1px solid black;
+			/* overflow은 자식이 부모보다 크거나, 자식의 위치가 부모의
+			범위를 벗어난 경우 해당 내용(텍스트)을 어떻게 할지를 결정해주는 속성 
+			 - visible : 기본값
+			 - hidden : 감춤
+			 - scroll : 스크롤을 무조건 생성
+			 - auto : 텍스트가 부모를 넘어가면 스크롤을 생성하고,
+			 				  넘어가지 않으면 스크롤을 생성하지 않음
+			*/
+			/* 작업할 공간의 크기와 위치가 정해진 경우, 작업을 하면서
+			해당하는 공간을 침범하지 않기 위해 overflow속성을 활용한다. */
+			overflow: auto;
+		}
+		.box2{
+			height: 700px; 
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		안녕하세요.
+		<div class="box2"></div>
+	</div>
+</body>
+</html>
