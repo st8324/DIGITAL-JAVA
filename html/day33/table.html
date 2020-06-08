@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>테이블 속성</title>
+	<style>
+		table{
+			border-collapse: collapse;
+		}
+		tr{
+			border: 1px solid black;
+			border-left: none;
+			border-right: none;
+		}
+		.name{
+			width: 500px;
+		}
+		.score{
+			width: 100px;
+		}
+		
+		thead>tr{
+			background-color: gainsboro;
+		}
+		tbody>tr:nth-child(2n){
+			background-color: honeydew;
+		}
+		tbody>tr:hover{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th class="name">게시글</th>
+				<th class="score">작성일</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>홍길동</td>
+				<td>2020-06-08</td>
+			</tr>
+			<tr>
+				<td>홍길동</td>
+				<td>2020-06-08</td>
+			</tr>
+			<tr>
+				<td>홍길동</td>
+				<td>2020-06-08</td>
+			</tr>
+			<tr>
+				<td>홍길동</td>
+				<td>2020-06-08</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
