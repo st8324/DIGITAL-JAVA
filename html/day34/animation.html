@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>애니메이션</title>
+	<style>
+		.box{
+			position: relative;
+			height: 50px;
+		}
+		.bounce{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			animation-name: bounce;
+			animation-duration: 1s;
+		}
+		@keyframes bounce {
+			0%{
+				bottom: 0;
+			}
+			25%{
+				bottom: 30px;
+			}
+			50%{
+				bottom: 10px;
+			}
+			75%{
+				bottom: 15px;
+			}
+			100%{
+				bottom: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span class="bounce">안녕하세요.</span>
+	</div>
+</body>
+</html>
