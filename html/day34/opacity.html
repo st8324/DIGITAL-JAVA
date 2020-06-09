@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>투명도 속성</title>
+	<style>
+		.bg, .front{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: black;
+		}
+		.bg{
+			background-image: url(../day30/dog.jpg);
+		}
+		.front{
+			/* opacity : 0에서 1의 값을 가짐. 0이면 투명, 1이면 완전불투명 */
+			/* opacity가 적용된 요소 안에 있는 모든 요소는 흐릿해지기 때문
+			에 조심해야한다. */
+			opacity: 0.3;
+			font-size: 100px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="bg"></div>
+	<div class="front">안녕하세요.</div>
+</body>
+</html>
