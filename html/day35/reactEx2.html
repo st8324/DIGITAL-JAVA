@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>반응형 메뉴</title>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		.nav,.nav>ul{
+			height: 40px;
+			background-color: honeydew;
+		}
+		.nav li{
+			width: calc(100% / 3);
+			height: 100%;
+			box-sizing: border-box;
+			float: left;
+			border: 1px solid black;
+			text-align: center;
+			line-height: 38px;
+		}
+		.nav li:nth-child(1),
+		.nav li:nth-child(2){
+			border-right: 0;
+		}
+		.ham{
+			width: 40px;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid honeydew;
+			cursor: pointer;
+			float: right;
+			display: none;
+		}
+		@media (max-width: 600px) {
+			.nav>ul{
+				display: none;
+			}
+			.ham{
+				display: block;
+				text-align: center;
+			}
+			.ham>i{
+				font-size: 30px;
+				line-height: 38px;
+			}
+			.ham:hover{
+				border-color: gray;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+		<div class="ham">
+			<i class="fas fa-bars"></i>
+		</div>
+	</nav>
+</body>
+</html>
