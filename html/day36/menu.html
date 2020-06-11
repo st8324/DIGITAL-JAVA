@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>서브 메뉴</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		nav{
+			height: 50px;
+			background-color: aliceblue;
+		}
+		nav>ul{
+			display: flex;
+		}
+		.menu{
+			width: 100%;
+			height: 50px;
+			box-sizing: border-box;
+		}
+		.menu:nth-child(1)>a,
+		.menu:nth-child(2)>a{
+			border-right: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.menu>a,
+		.sub-menu>a{
+			display: block;
+			height: 100%;
+			width: 100%;
+			color: black;
+			text-align: center;
+			line-height: 48px;
+			font-size: 25px;
+			border: 1px solid black;
+			box-sizing: border-box;
+		}
+		.sub-menu{
+			height: 50px;
+			width: 100%;
+			background-color: aliceblue;
+			box-sizing: border-box;
+		}
+		.menu>ul{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li class="menu">
+				<a href="#">메뉴1</a>
+				<ul>
+					<li class="sub-menu">
+						<a href="#">메뉴1-1</a>
+					</li>
+					<li class="sub-menu">
+						<a href="#">메뉴1-2</a>
+					</li>
+					<li class="sub-menu">
+						<a href="#">메뉴1-3</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu">
+				<a href="#">메뉴2</a>
+				<ul>
+					<li class="sub-menu">
+						<a href="#">메뉴2-1</a>
+					</li>
+					<li class="sub-menu">
+						<a href="#">메뉴2-2</a>
+					</li>
+					<li class="sub-menu">
+						<a href="#">메뉴2-3</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu"><a href="#">메뉴3</a></li>
+		</ul>
+	</nav>
+	<script>
+		$('.menu').hover(function(){
+			/* this : 이벤트가 실행된 선택자*/
+			/*menu클래스를 가진 요소 중 hover이벤트가 발생된 요소의
+			자손중에서 ul태그를 찾아서 슬라이드 토글을 시킴*/
+			$(this).find('ul').stop().slideToggle(500);
+			//$('.menu>ul').slideToggle(1000);
+		})
+	</script>
+</body>
+</html>
