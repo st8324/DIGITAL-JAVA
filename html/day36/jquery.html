@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<input type="text" id="id">
+	<button class="btn1">버튼1</button>
+	<button class="btn2">버튼2</button>
+	<select name="" id="year"></select>
+	<div id="test"></div>
+	<script>
+		/* 
+		jquery에서 요소(태그) 정보를가져오기
+		$('선택자')
+		input태그/select태그/textarea태그의 값을 가져오기
+		$('선택자').val()
+		input태그/select태그/textarea태그의 값을 설정하기
+		$('선택자').val(값)
+		태그의 글자를 가져오기
+		$('선택자').text();
+		태그의 글자를 설정하기
+		$('선택자').text(값);
+		태그의 html코드를 가져오기
+		$('선택자').html();
+		태그의 html코드를 설정하기
+		$('선택자').html(값);
+		*/
+		$('#test').html('<button>버튼</button>')
+		var str = '';
+		for(var year = 1910; year<=2020; year++){
+			str += '<option>'+year+' </option>';
+		}
+		$('#year').html(str);
+	</script>
+</body>
+</html>
