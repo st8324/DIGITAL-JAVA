@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>스크립트</title>
+	<!-- 스크립트 적용방법
+	1. 외부 js파일을 불러오는 방법
+	 - 플러그인(기능이 미리 구현된 파일)
+	 - 공통기능
+		script태그 이용
+	2. head태그에 script태그를 이용하여 작성하는 방법
+	3. body태그에 script태그를 이용하여 작성하는 방법 
+	html은 head태그부터 실행되기 때문에 script태그가 head태그에 있느냐
+	body태그에 있느냐에 따라 실행결과가 달라질 수 있음
+	 => head태그가 실행되는 동안 body태그 안에 있는 코드들은 구성되어
+	 있지 않은 상태
+	-->
+	<script>
+		/* 자바에서는 변수의 자료형에 따라 변수 선언이 달라지지만
+		스크립트에서는 자료형을 명시하지 않음.
+		;이 필수 가 아님
+		var 변수명;
+		*/
+		var num = 10;
+		//console.log는 개발자 도구의 콘솔창에 결과를 출력하는 함수
+		console.log(num);
+		console.log(3/2);
+		// 스크립트에서는 ''와 ""가 문자열을 의미
+		console.log(3 == '3');
+		// ==는 값이 같은 것을 의미
+		// ===는 값도 같고 자료형도 같은 것을 의미
+		console.log(3 ==='3');
+		// !=는 값이다른 것을 의미
+		// !==는 값이 다르거나 자료형이 다른 것을 의미
+		console.log(3 != '3');
+		console.log(3 !== '3');
+		//배열에 자료형을 일치시키지 않아도 된다.
+		var arr = [];
+		arr = new Array();
+		arr = new Array(1,'2','345');
+		arr.push(1);
+		arr.push('1');
+		console.log(arr);
+		/* 
+		함수 선언방법1 : 함수 선언위치가 어디든 상관없이 호출 가능
+		function 함수명(매개변수들){
+			구현;
+		}
+		함수 선언방법2 : 함수 선언 후 호출 가능
+		var 함수명 = function(매개변수들){
+			구현;
+		}
+		*/
+		f1('함수선언방법1');
+		function f1(str){
+			console.log(str);
+		}
+		//f2();//에러 발생
+		var f2 = function(){
+			console.log('함수선언방법2');
+		}
+		f2();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
