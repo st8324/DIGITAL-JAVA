@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <button>슬라이드</button>
+    <div class="box">
+        안녕하세요 <br>
+        제 이름은 홍길동입니다. <br>
+    </div>
+    <div>
+        ㄴㄴㄴ
+    </div>
+    <script>
+        /* slideUp, slideDown, slideToggle
+        msecond : 슬라이드시간을 ms(생략가능)
+        function(){} : 슬라이드가 완료된 후 동작할 내용(생략가능)
+        slideXX(msecond,function(){
+
+        })
+        */
+       $('button').click(function(){
+           $('.box').slideToggle(500)
+       })
+        // $('.box').slideUp(3000,function(){
+        //     $('.box').slideDown(3000);
+        // });
+    </script>
+</body>
+</html>
