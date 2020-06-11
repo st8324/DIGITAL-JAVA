@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>이벤트</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<input type="text">
+	<button>클릭</button>
+	<script>
+		/* 이벤트 : 버튼 클릭, 호버, 마우스 이동 등과 같은 것
+		//이벤트 동작을 등록
+		$('선택자').이벤트명(function(){
+			동작;
+		})
+		//이벤트 동작을 호출
+		$('선택자').이벤트명();
+		*/
+		$('button').click(function(){
+			//console.log('클릭!');
+			//input태그에 입력된 value값을 가져와서 변수 tmp에 저장
+			var tmp = $('input').val();
+			//console.log를 통해 tmp값을 출력
+			console.log(tmp);
+			//ajax를 이용한 아이디 중복검사
+		})
+		/*
+		마우스가 들어갈때 동작을 한번 실행하고, 마우스가 나올 때 
+		동작을 한번 실행한다.
+		$('선택자').hover(function(){
+			동작;
+		})
+		마우스가 들어갈때 동작1을 실행하고, 마우스가 나올 때 동작2를 
+		실행
+		$('선택자').hover(function(){
+			동작1;
+		},function(){
+			동작2;
+		})
+		*/
+		$('button').hover(function(){
+			console.log('마우스인');
+		},function(){
+			console.log('마우스아웃');
+		})
+		// 버튼을 클릭하면 현재 input창에 입력된 값을 콘솔로 출력하도록
+		// 스크립트 코드를 작성하세요.
+	</script>
+</body>
+</html>
