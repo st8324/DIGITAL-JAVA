@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>부트스트랩 예제</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<style>
+		.box{
+			height: 50px;
+			width: 100%;
+			background-color: yellow;
+		}
+		.box:nth-of-type(2){
+			background-color: yellowgreen;
+		}
+		.sub-box{
+			height: 100%;
+			box-sizing: border-box;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div class="box row">
+		<div class="sub-box col-3"></div>
+		<div class="sub-box col-3"></div>
+		<div class="sub-box col-3"></div>
+	</div>
+	<div class="box row">
+		<div class="sub-box col-3 col-xl-1 col-lg-2"></div>
+		<div class="sub-box col-3 col-xl-1 col-lg-2"></div>
+		<div class="sub-box col-3 col-xl-1 col-lg-2"></div>
+	</div>
+</body>
+</html>
