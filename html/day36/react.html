@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>반응형 예제</title>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		.nav{
+			height: 50px;
+			background-color: blanchedalmond;
+		}
+		.box-main{
+			margin-top: 20px;
+		}
+		.box-sidemenu{
+			width: 200px;
+			height: 150px;
+			background-color: ghostwhite;
+			float: left;
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		.box-contents{
+			height: 500px;
+			width: calc(100% - 210px);
+			border: 1px solid black;
+			box-sizing: border-box;
+			float: right;
+		}
+		.menu{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			height: 50px;
+			text-align: center;
+			line-height: 49px;
+			border: 1px solid black;
+			box-sizing: border-box;
+		}
+		.menu:first-of-type,
+		.menu:nth-of-type(2){
+			border-bottom: none;
+		}
+		.menu>a{
+			text-decoration: none;
+			color: black;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.box-logo{
+			width: 150px;
+			height: 50px;
+			float: left;
+		}
+		.box-logo>a{
+			text-decoration: none;
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: black;
+			line-height: 50px;
+			font-size: 25px;
+			text-align: center;
+		}
+		.box-menu{
+			width: 300px;
+			height: 50px;
+			float: left;
+			margin: 0;
+			padding: 0;
+			display: none;
+		}
+		.box-right{
+			height: 50px;
+			float: right;
+		}
+		.ham{
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+			float: left;
+			display: none;
+		}
+		.box-search{
+			height: 50px;
+			width: 300px;
+			float: left;
+			padding: 10px 0;
+			box-sizing: border-box;
+		}
+		.box-search input{
+			width: 200px;
+			height: 30px;
+			box-sizing: border-box;
+			border: 1px solid red;
+			border-radius: 5px;
+			float: left;
+		}
+		.box-search button{
+			height: 30px;
+			box-sizing: border-box;
+			background-color: transparent;
+			border: 1px solid red;
+			width: 90px;
+			margin-left: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.box-menu li{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			float: left;
+		}
+		.box-menu li>a{
+			display: block;
+			height: 50px;
+			width: 100px;
+			line-height: 50px;
+			font-size: 25px;
+			text-decoration: none;
+			color: black;
+			text-align: center;
+		}
+		@media (max-width: 1000px) {
+			.box-sidemenu{
+				display: none;
+			}
+			.box-contents{
+				width: 100%;
+			}
+			.box-menu{
+				display: block;
+			}
+		}
+		@media (max-width: 800px ) {
+			.box-menu{
+				display: none;
+			}
+			.ham{
+				display: block;
+			}
+			.box-logo{
+				width: 100px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<div class="box-logo"><a href="#">로고</a></div>
+		<ul class="box-menu">
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+		</ul>
+		<div class="box-right">
+			<div class="box-search">
+				<form action="" method="GET">
+					<input type="text">
+					<button>검색</button>
+				</form>
+			</div>
+			<div class="ham">
+				<i class="fas fa-bars"></i>
+			</div>
+		</div>
+	</nav>
+	<div class="box-main">
+		<ul class="box-sidemenu">
+			<li class="menu"><a href="#">메뉴1</a></li>
+			<li class="menu"><a href="#">메뉴2</a></li>
+			<li class="menu"><a href="#">메뉴3</a></li>
+		</ul>
+		<div class="box-contents"></div>
+	</div>
+</body>
+</html>
