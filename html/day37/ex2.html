@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<button id="btn1">증가</button>
+	<button id="btn2">바꿈</button>
+	<div id="res">0</div>
+	<script>
+		var cnt = 0;
+		var add = true;
+	</script>
+	<script>
+		$('#btn1').click(function(){
+			if(add)
+				cnt++;
+			else
+				cnt--;
+			$('#res').text(cnt);
+			
+		})
+		$('#btn2').click(function(){
+			var str;
+			if(add){
+				str='감소';
+			}else{
+				str='증가';
+			}
+			str = add?'감소':'증가';
+			$('#btn1').text(str);
+			add = !add;
+		})
+	</script>
+</body>
+</html>

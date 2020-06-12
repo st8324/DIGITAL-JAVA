@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<input type="text" id="input1"><br>
+	<button id="btn1">클릭</button>
+	<div class="res"></div>
+	<script>
+		/* input태그에서 val() 통해 가져온 값들은 문자열로 가져온다.*/
+		$('#btn1').click(function(){
+			var tmp = $('#input1').val();
+			tmp = parseInt(tmp);
+			var str = '';
+			for(var i=1; i<=9; i++){
+				
+				str += tmp + ' X ' + i + ' = ' + tmp*i + '<br>';
+			}
+			$('.res').html(str);
+		})
+	</script>
+</body>
+</html>

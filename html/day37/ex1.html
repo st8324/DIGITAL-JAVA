@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<input type="text" id="text1"><br>
+	<input type="text" id="text2"><br>
+	<button id="btn1">확인</button>
+	<script>
+		// 버튼을 클릭하면 text1에 있는 내용이 text2에 복사되도록 작성
+		$('#btn1').click(function(){
+			var tmp = $('#text1').val();
+			console.log(tmp);
+			$('#text2').val(tmp);
+		})
+	</script>
+</body>
+</html>
