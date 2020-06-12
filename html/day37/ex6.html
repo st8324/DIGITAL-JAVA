@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			background-image: url(../day30/dog.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
+		}
+		.box1{
+			background-image: url(https://lh3.googleusercontent.com/proxy/9EGudUzTyzN5XUtc5aAN_M3h_tjy2wHS2N2zVkM04LMDOaSmsz-uF60jpRLeFj-jbHVvfTI-JrtmkV3C9faoy_594sJ6uXp852dGjYYFpNN-pr9-Wg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		$(function(){
+			$('.box').click(function(){
+				$(this).toggleClass('box1');
+			})
+		})
+	</script>
+</body>
+</html>

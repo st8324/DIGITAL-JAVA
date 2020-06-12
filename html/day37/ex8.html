@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>햄버거 메뉴</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.nav{
+			height: 40px;
+			background-color: aliceblue;
+		}
+		.ham{
+			width: 40px;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid aliceblue;
+			text-align: center;
+			line-height: 38px;
+			font-size: 25px;
+			cursor: pointer;
+			float: right;
+		}
+		.ham:hover{
+			border-color: aqua;
+		}
+		.container{
+			position: relative;
+		}
+		.side-menu{
+			position: absolute;
+			right: -200px;
+			top: 0;
+			width: 200px;
+			height: 400px;
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<div class="ham">
+			<i class="fas fa-bars"></i>
+		</div>
+	</div>
+	<div class="container">
+		<div class="side-menu"></div>
+	</div>
+	<script>
+		$(function(){
+			/*var show = false;
+			$('.ham').click(function(){
+				if(!show)
+					$('.side-menu').stop()
+								.animate({'right':0},500);
+				else
+					$('.side-menu').stop()
+								.animate({'right':'-200px'},500);
+				
+					show = !show;
+			})
+			*/
+			$('.ham').click(function(){
+				/*$(선택자).hasClass('클래스')
+				: 요소가 해당 클래스를 가지고 있는지 없는지
+				알려주는 함수
+				*/
+				if(!$(this).hasClass('show'))
+					$('.side-menu').stop().animate({'right':0},500);
+				else
+					$('.side-menu').stop().animate({'right':'-200px'},500);
+				$(this).toggleClass('show');
+			})
+		})
+	</script>
+</body>
+</html>

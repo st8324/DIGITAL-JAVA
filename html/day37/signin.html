@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>네이버 로그인</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		a{
+			text-decoration: none;
+		}
+		body{
+			background-color: rgb(245, 246, 247);
+		}
+		.box-main{
+			width: 600px;
+			margin: 0 auto;
+		}
+		.box-logo{
+			height: 80px;
+			width: 100%;
+			margin: 40px 0;
+			text-align: center;
+		}
+		.box-logo>a{
+			color: rgb(0, 200, 80);
+			line-height: 80px;
+			font-weight: 900;
+			font-size: 50px;
+		}
+		.box-input{
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid rgb(218, 218, 218);
+			padding: 10px 30px 10px 10px;
+			margin: 10px 0;
+			background-color: #fff;
+		}
+		.box-input>input{
+			height: 28px;
+			width: 100%;
+			border: none;
+		}
+		.btn-login{
+			display: block;
+			width: 100%;
+			height: 50px;
+			background-color: rgb(0, 200, 80);
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			border: none;
+			cursor: pointer;
+			margin: 30px 0 10px;
+		}
+		.box-etc{
+			height: 24px;
+		}
+		.box-etc-left{
+			height: 100%;
+			float: left;
+			position: relative;
+		}
+		.box-etc-left>input[type=checkbox]{
+			width: 24px;
+			height: 24px;
+			-webkit-appearance: none;
+		}
+		.box-etc-left>label{
+			line-height: 24px;
+			height: 24px;
+			padding-left: 28px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 160px;
+			background-image: url(../day35/check.png);
+			background-repeat: no-repeat;
+		}
+		.box-etc-left>label.check{
+			background-image: url(../day35/check2.png);
+		}
+		.box-etc-right{
+			height: 100%;
+			float: right;
+		}
+		.font-gray{
+			color: rgb(102, 102, 102);
+		}
+		.btn-onoff{
+			position: relative;
+			top: -7px;
+			border: none;
+		}
+		.box-etc-right .bar{
+			position: relative;
+			top: -6px;
+		}
+		.link-ip,
+		.link-login{
+			position: relative;
+			top: -5px;
+		}
+		.box-q{
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background-color: #f00;
+			margin-right: 10px;
+			position: relative;
+		}
+		.hr{
+			border-top: 1px solid rgb(218, 218, 218);
+			margin: 30px 0 15px;
+		}
+		.box-find{
+			text-align: center;
+		}
+		.box-ad{
+			height: 200px;
+			border: 1px solid rgb(218, 218, 218);
+			background-color: #fff;
+			box-sizing: border-box;
+			margin-top: 50px;
+			margin-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+	<form action="" method="POST">
+		<div class="box-main">
+			<div class="box-logo">
+				<a href="//naver.com" target="_blank">NAVER</a>
+			</div>
+			<div class="box-input">
+				<input type="text" placeholder="아이디">
+			</div>
+			<div class="box-input">
+				<input type="password" placeholder="비밀번호">
+			</div>
+			<button class="btn-login">로그인</button>
+			<div class="box-etc">
+				<div class="box-etc-left">
+					<input type="checkbox" name="login" id="login">
+					<label for="login">로그인 상태 유지</label>
+				</div>
+				<div class="box-etc-right">
+					<a href="#" class="link-ip font-gray">IP보안</a>
+					<button class="btn-onoff font-gray">OFF</button>
+					<span class="bar font-gray">|</span>
+					<a href="#" class="link-login font-gray">일회용 로그인</a>
+					<div class="box-q"></div>
+				</div>
+			</div>
+			<div class="hr"></div>
+			<div class="box-find">
+				<a href="#" class="font-gray">아이디 찾기</a>
+				<span class="bar font-gray"> | </span>
+				<a href="#" class="font-gray">비밀번호 찾기</a>
+				<span class="bar font-gray"> | </span>
+				<a href="#" class="font-gray">회원가입</a>
+			</div>
+			<div class="box-ad"></div>
+		</div>
+	</form>
+	<script>
+		$(function(){
+			$('.box-etc-left>label').click(function(){
+				$(this).toggleClass('check');
+			})
+		})
+	</script>
+</body>
+</html>
