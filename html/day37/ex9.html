@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>햄버거 메뉴</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.nav{
+			height: 40px;
+			background-color: aliceblue;
+		}
+		.ham{
+			width: 40px;
+			height: 40px;
+			box-sizing: border-box;
+			border: 1px solid aliceblue;
+			text-align: center;
+			line-height: 38px;
+			font-size: 25px;
+			cursor: pointer;
+			float: right;
+		}
+		.ham:hover{
+			border-color: aqua;
+		}
+		.container{
+			position: relative;
+		}
+		.side-menu{
+			width: 100%;
+			height: 100px;
+			background-color: gray;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<div class="ham">
+			<i class="fas fa-bars"></i>
+		</div>
+	</div>
+	<div class="container">
+		<div class="side-menu"></div>
+	</div>
+	<script>
+		$(function(){
+			
+			$('.ham').click(function(){
+				$('.side-menu').stop()
+					.slideToggle(500);
+			})
+		})
+	</script>
+</body>
+</html>
