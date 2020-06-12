@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<button class="btn">버튼</button>
+	<div class="res">
+		<button class="btn1">버튼1</button>
+	</div>
+	<script>
+		/*
+		스크립트가 로딩
+		 =>.btn 클릭 이벤트를 등록
+			 - console.log('test1')
+			 - .btn클릭 이벤트 등록1
+		.btn버튼을 클릭(첫번째)
+		 =>.btn버튼 이벤트를 실행(console.log('test1'))
+		 =>.btn버튼 이벤트를 등록2
+		.btn버튼을 클릭(두번째)
+		 =>.btn버튼 이벤트를 실행(console.log('test1'))
+		 =>.btn버튼 이벤트 등록2에서 등록한 이벤트를 실행
+			 =>console.log('test2')
+		 =>.btn버튼 이벤트를 등록3
+		.btn버튼을 클릭(세번째)
+		 =>.btn버튼 이벤트를 실행(console.log('test1'))
+		 =>.btn버튼 이벤트 등록2에서 등록한 이벤트를 실행
+			 =>console.log('test2')
+		 =>.btn버튼 이벤트 등록3에서 등록한 이벤트를 실행
+			 =>console.log('test2')
+		 =>.btn버튼 이벤트를 등록4
+		*/
+		/*$('.btn').click(function(){
+			console.log('test1')
+			$('.btn').click(function(){
+				console.log('test2');
+			})
+		})*/
+		/*$('.btn').click(function(){
+			console.log('test1');
+		})
+		$('.btn').click(function(){
+			console.log('test1');
+		})*/
+		$('.btn').click(function(){
+			var str = '<button class="btn1">버튼1</button>';
+			$('.res').append(str);
+			regEvent($('.btn1').last())
+		})
+		regEvent($('.btn1'));
+		/* regEvent:요소 obj가 주어지면 주어진 obj를
+		클릭했을 때 이벤트를 등록하는 함수
+		*/
+		function regEvent(obj){
+			obj.click(function(){
+				console.log('버튼1입니다.')
+			})
+		}
+	</script>
+</body>
+</html>
