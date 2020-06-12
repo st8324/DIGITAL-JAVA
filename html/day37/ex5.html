@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<style>
+		.border-red{
+			border-color: red;
+		}
+	</style>
+	<script>
+		/* $(document).ready(function(){})은 body태그 안에 있는
+		모든 요소가 배치 된 후 실행 됨
+		$(doucument).ready()
+		$(function(){})*/
+		// $(document).ready(function(){
+		// 	$('input').val('123');
+		// })
+		$(function(){
+			$('input').val('123');
+			/* 
+			$(selector).css('속성명') : css의 속성에 해당하는 값을
+			가져옴
+			$(selector).css('속성명','값') : css의 속성에 해당하는 값을
+			설정함, 태그의 style속성에 직접 해당 속성의 값을 설정
+			*/
+			var width = $('input').css('width');
+			console.log(width);
+			// $('input').hover(function(){
+			// 	$(this).css('border-color','red');
+			// },function(){
+			// 	$(this).css('border-color','rgb(118, 118, 118)');
+			// })
+			/* 
+			$(selector).addClass(클래스) : 요소에 클래스를 추가
+			$(selector).removeClass(클래스) : 요소에 클래스를 제거
+			$(selector).toggleClass(클래스) : 요소에 해당 클래스가
+			  있으면 제거, 없으면 추가
+			*/
+			// $('input').hover(function(){
+			// 	$(this).addClass('border-red');
+			// },function(){
+			// 	$(this).removeClass('border-red');
+			// })
+			$('input').hover(function(){
+				$(this).toggleClass('border-red');
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="text">
+	
+</body>
+</html>
