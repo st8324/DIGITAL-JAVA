@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.container *{
+			margin: 0;
+			padding: 10px;
+			display: block;
+			border:  2px solid lightgray;
+		}
+	</style>
+	<script>
+		$(function(){
+			/*
+			sibilings() : 모든 형제를 선택하는 함수(자기 포함x)
+			sibilings(선택자) : 형제 중 선택자와 일치하는 형제를
+									 선택하는 함수
+			*/
+			$('h2').siblings().css('border-color','red');
+			$('h2').siblings('span').css('border-color','blue');
+			/*
+			next() : 선택자의 다음 형제 하나(뒤에 나오는)
+			nextAll() : 선택자의 다음 형제들 전부
+			nextUntil(선택자1) : 선택자의 다음 형제들 중 선택자1전까지
+			*/
+			$('span').next().css('background-color','yellow');
+			$('span').nextAll().css('color','red');
+			$('span').nextAll('p').css('text-decoration','underline');
+			$('span').nextUntil('p').css('border-width','5px');
+			/*
+			prev() : 선택자 바로 앞 형제
+			prevAll() : 선택자 앞의 형제들
+			prevAll(선택자1) : 선택자 앞의 형제들 중 선택자1과 일치하는 형제
+			prevUntil(선택자1) : 선택자 앞 형제들 중 선택자1전까지 형제
+			*/
+			$('.p').prev().css('border-left-color','green');
+			$('.p').prevAll().css('border-top-color','green');
+			$('.p').prevAll('h2').css('font-size','10px');
+			$('.p').prevUntil('p').css('text-align','center');
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+		div
+		<p>p</p>
+		<span>span</span>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p class="p">p</p>
+	</div>
+</body>
+</html>
