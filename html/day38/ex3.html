@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<button id="add">추가</button>
+	<div class="res"></div>
+	<script>
+		$(function(){
+			$('#add').click(function(){
+				//res 클래스 요소 안에 있는 html 코드를 가져옴
+				var str = $('.res').html();
+				//var str = '' + <input type="text"><br>;
+				//가져온 html 코드 뒤에 추가하려는 요소를 이어 붙임
+				str = str + '<div>' +	'<input type="text">' 
+					+	'<button>클릭</button>' + '</div>'
+				;
+				//새로 생성된 html 코드를 res클래스 요소 안에 html코드로 추가
+				$('.res').html(str);
+				//여기에서 버튼 이베트를 등록하는 코드를 추가
+				registerBtn();
+				/* 스크립트로 태그를 구성하면, 해당 태그에는 이벤트가 자동으
+				로 등록되지 않는다. 그래서 새로 추가된 요소에는 이벤트를
+				따로 등록해줘야한다.*/
+			})
+			var cnt = 0;
+			function registerBtn(){
+				$('.res button').click(function(){
+					var text = $(this).prev().val();
+					console.log(text);
+				})
+			}
+		})
+	</script>
+</body>
+</html>

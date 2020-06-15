@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.box{
+			width: 50px;
+			height: 50px;
+			border: 1px solid black;
+			box-sizing: border-box;
+			display: inline-block;
+		}
+		/*.box:nth-of-type(1){
+			border: 2px solid red;
+		}*/
+		.border-red{
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<button id="prev">이전</button>
+	<button id="next">다음</button>
+	<div class="res">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<script>
+		$(function(){
+			$('.res').children().first()
+				//.css('border-color','red')
+				/* css()메소드에서 여러 속성의 값을 한번에 변경하려면
+				{'속성':'값', '속성':'값'}의 형태로 매개변수를 넣어준다.
+				*/
+				//.css({'border-color':'red','border-width':'2px'})
+				.addClass('border-red');
+			var index = 0;
+			//id가 next인 요소에 클릭 이벤트를 등록
+			$('#next').click(function(){
+				$('.res').children().eq(index).removeClass('border-red');
+				++index;
+				var cnt = $('.res').children().length;
+				if(index == cnt)
+					index = 0;
+				$('.res').children().eq(index).addClass('border-red');
+			})
+			$('#prev').click(function(){
+				$('.res').children().eq(index).removeClass('border-red');
+				--index;
+				if(index == -1)
+					index = $('.res').children().length - 1;
+				$('.res').children().eq(index).addClass('border-red');
+			})
+		})
+	</script>
+</body>
+</html>

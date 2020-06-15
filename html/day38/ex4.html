@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<button>추가</button>
+
+	<script>
+		//이벤트가 중복으로 등록되는 잘못된 예제
+		$(function(){
+			$('button').click(function(){
+				$('body').append('<button>추가</button>');
+				console.log('test');
+				$('button').click(function(){
+					$('body').append('<button>추가</button>');
+					console.log('test');
+				})
+			})
+		})
+		
+	</script>
+</body>
+</html>

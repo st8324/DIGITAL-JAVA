@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<button id="add">추가</button>
+	<div class="res"></div>
+	<script>
+		$(function(){
+			var index = 1;
+			$('#add').click(function(){
+				var str = 
+				'<div>' +	
+					'<input type="text">' +
+					'<button>클릭'+index+'</button>' + 
+				'</div>';
+					index++;
+					$('.res').append(str);
+					//새로 추가된 박스 안에 있는 버튼을 클릭할 때 실행되는 이벤트 등록
+					$('.res').children().last().find('button').click(function(){
+						console.log($(this).prev().val())
+					})
+			})
+		})
+	</script>
+</body>
+</html>
