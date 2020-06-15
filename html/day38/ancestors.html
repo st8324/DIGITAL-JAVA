@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jquery 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		*{				
+			border: 2px solid black;
+			padding: 10px;
+			margin: 0;
+		}
+		.bg-red{	background-color: red;		}
+		.bg-green{background-color: green;	}
+		.bg-blue{	background-color: blue;		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul>
+				<li>메뉴1</li>
+				<li>메뉴2</li>
+				<li>메뉴3</li>
+			</ul>
+		</nav>
+	</div>
+	<script>
+		$(function(){
+			//li태그의 부모에 bg-red클래스를 추가
+			//요소의 부모를 찾는 메소드 : parent()
+			$('li').parent().addClass('bg-green');
+			//요소의 조상을 찾는 메소드 : parents()
+			//매개변수가 없는 경우 모든 조상
+			$('li').parents().addClass('bg-red');
+			//매개변수가 있는 경우 해당 선택자에 맞는 조상만 찾음
+			$('li').parents('nav').css('border-color','yellow');
+			//parentsUntil() : 해당 선택자전까지의 모든 조상들을 선택
+			$('li').parentsUntil('body').css('border-top-color','white');
+		})
+	</script>
+</body>
+</html>
