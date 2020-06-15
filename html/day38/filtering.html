@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Filtering 예제</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<h1>h1</h1>
+	<h1>h1</h1>
+	<h1 class="h1">h1</h1>
+	<h1>h1</h1>
+	<h1>h1</h1>
+	<h1>h1</h1>
+	<h1>h1</h1>
+	<h1 class="h1">h1</h1>
+	<h1>h1</h1>
+	<h1>h1</h1>
+	<script>
+		$(function(){
+			/* 필러링은 자손,조상,형제 탐색과는 다르게 선택자를 통해
+			선택된 요소들을 걸러줄 때 사용
+			$(선택자).first() : 선택자 요소의 첫번째 요소(eq(0)와 같음)
+			$(선택자).last() : 선택자 요소의 마지막 요소
+			*/
+			$('h1').first().css('color','red');
+			$('h1').last().css('text-decoration','underline');
+			/*
+			$(선택자).eq(index) : 선택자들중 index+1번째 요소
+					index는 0부터 시작
+			$(선택자).filter(선택자1) : 선택자들 중 선택자1에 해당하는
+					요소들을 선택
+			=>$(선택자선택자1)로 대체 가능(선택자와 선택자1의 순서는 바
+			뀔수 있음)
+			$(선택자).not(선택자1) : 선택자들 중 선택자1에 해당하지 않은
+					요소들을 선택
+			*/
+			$('h1').eq(4).css('text-align','center');
+			$('h1').filter('.h1').css('background-color','yellow');
+			//$('h1.h1').css('background-color','yellow');
+			$('h1').not('.h1').css('font-weight','100');
+		})
+	</script>
+</body>
+</html>
