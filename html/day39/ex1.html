@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>설문 예제</title>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<h1>설문지</h1>
+	<div class="question">
+		<div class="main-q">
+			<div>질문1</div>
+			<div class="sub-q">
+				<span>질문1-1</span>
+				<input type="text">
+				<button>확인</button>
+				<button class="sub-del-btn">삭제</button>
+			</div>
+			<button class="sub-btn">서브 질문 추가</button>
+		</div>
+	</div>
+	<button class="main-btn">질문 추가</button>
+	<script>
+		$(function(){
+			var num = 1;
+			var numArr = [1];
+			$('.main-btn').click(function(){
+				//++num;
+				numArr.push(1);
+				var str = 
+				'<div class="main-q">'+
+					'<div>질문'+numArr.length+'</div>'+
+					'<div class="sub-q">'+
+						'<span>질문'+numArr.length+'-1</span> '+
+						'<input type="text"> '+
+						'<button>확인</button> '+
+						'<button class="sub-del-btn">삭제</button>'+
+					'</div>'+
+					'<button class="sub-btn">서브 질문 추가</button>'+
+				'</div>';
+				$('.question').append(str);
+				//추가한 서브버튼에 이벤트를 등록
+				registerBtn($('.main-q').last().find('.sub-btn'));
+				deleteSubBtn($('.main-q').last().find('.sub-del-btn'));
+			})
+			registerBtn($('.sub-btn'))
+			//obj에 클릭이벤트를 등록하는 함수
+			function registerBtn(obj){
+				obj.click(function(){
+					//형제중 질문?이 있는 요소에서 질문을 제외한 ?를 추출하는 코드
+					var main = $(this).parent().children().eq(0).text().substring(2);
+					main = parseInt(main);
+					numArr[main-1]++;
+					var str = 
+					'<div class="sub-q">'+
+						'<span>질문'+main+'-'+numArr[main-1]+'</span> '+
+						'<input type="text"> '+
+						'<button>확인</button> '+
+						'<button class="sub-del-btn">삭제</button>'+
+					'</div>';
+					$(this).prev().after(str);
+					deleteSubBtn($(this).prev().find('.sub-del-btn'));
+				})
+			}
+			deleteSubBtn($('.sub-del-btn'));
+			function deleteSubBtn(obj){
+				obj.click(function(){
+					//몇번째 메인 질문인지 숫자를 문자열로 가져오는 코드
+					var main = $(this).parent().children().eq(0).text().substring(2);
+					//문자열을 숫자로
+					main = parseInt(main);
+					//서브 질문의 갯수를 줄여줌
+					numArr[main-1]--;
+					$(this).parent().remove();
+					var list = $('.main-q').eq(main-1).find('.sub-q');
+					for(var i=0; i<list.length; i++){
+						//질문A-B
+						list.eq(i).children().eq(0)
+							.text('질문'+main+'-'+(i+1));
+					}
+				})
+			}
+		})
+	</script>
+</body>
+</html>
