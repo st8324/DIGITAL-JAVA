@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>이미지 더보기</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			padding: 10px;
+		}
+		.row{
+			display: flex;
+		}
+		.box{
+			padding: 10px;
+			height: 300px;
+			width: 100%;
+		}
+		.box>img{
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+		#more{
+			width: 100%;
+			height: 50px;
+			border: 1px solid black;
+			background-color: aliceblue;
+			border-radius: 5px;
+		}
+	</style>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="box">
+				<img src="../day30/dog.jpg" alt="">
+			</div>
+			<div class="box">
+				<img src="../day30/dog.jpg" alt="">
+			</div>
+			<div class="box">
+				<img src="../day30/dog.jpg" alt="">
+			</div>
+			<div class="box">
+				<img src="../day30/dog.jpg" alt="">
+			</div>
+		</div>
+		<button id="more">더보기</button>
+	</div>
+	<script>
+		$(function(){
+			$('#more').click(function(){
+				var str = 
+				'<div class="row">'+
+					'<div class="box"><img src="../day30/dog.jpg" alt=""></div>'+
+					'<div class="box"><img src="../day30/dog.jpg" alt=""></div>'+
+					'<div class="box"><img src="../day30/dog.jpg" alt=""></div>'+
+					'<div class="box"><img src="../day30/dog.jpg" alt=""></div>'+
+				'</div>';
+				$('.row').last().after(str);
+			})
+		})
+	</script>
+</body>
+</html>
