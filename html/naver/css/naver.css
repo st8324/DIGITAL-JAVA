@@ -14,6 +14,7 @@ body{
     padding: 0 30px;
     box-sizing: border-box;
     position: relative;
+    height: 100%;
 }
 /* whale 박스 관련 css */
 .box-whale{
@@ -75,10 +76,7 @@ body{
 .btn-closetext-whale{
     display: block;
     height: 49px;
-    border: none;
     color: #fff;
-    background-color: transparent;
-    /* line-height: 47px; */
     font-size: 11px;
     font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',helvetica,'Apple SD Gothic Neo',sans-serif;
     float: left;
@@ -90,8 +88,6 @@ body{
     width: 23px;
     height: 23px;
     background-position: -429px -116px;
-    background-color: transparent;
-    border: none;
     margin-left: 4px;
     margin-top: 11px;
 }
@@ -99,6 +95,59 @@ body{
 .box-container-search{
     height: 161px;
 }
+.logo-naver{
+    width: 225px;
+    height: 52px;
+    display: block;
+    background-position: 0 -161px;
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    left: 21px;
+}
+.box-search{
+    width: 586px;
+    height: 56px;
+    box-sizing: border-box;
+    border: 2px solid #19ce60;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -27px;
+    left: 268px;
+}
+.input-search{
+    width: 470px;
+    height: 50px;
+    margin: 1px;
+    box-sizing: border-box;
+    float: left;
+    padding: 13px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+.btn-v-keyboard{
+    width: 36px;
+    height: 56px;
+    position: absolute;
+    top: 0;
+    right: 84px;
+    display: block;
+}
+.icon-v-keyboard{
+    width: 20px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -10px;
+    background-position: -400px -276px;
+}
+/* 메뉴창 관련 css */
 .box-container-menu{
     height: 50px;
     border-top: 1px solid rgb(222,226,229);
