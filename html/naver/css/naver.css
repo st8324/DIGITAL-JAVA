@@ -1,0 +1,119 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    min-width: 1190px;
+}
+.container{
+    width: 1190px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* whale 박스 관련 css */
+.box-whale{
+    height: 49px;
+    background-color: rgb(0,203,174);
+}
+.link-whale{
+    display: block;
+    width: 100%;
+    height: 49px;
+}
+.icon-whale{
+    display: block;
+    margin-top: 9px;
+    width: 110px;
+    height: 30px;
+    background-position: -276px -225px;
+    float: left;
+}
+.img-banner-whale{
+    display: block;
+    float: left;
+    margin-left: 120px;
+}
+.text-banner{
+    float: left;
+    margin-left: 8px;
+    height: 49px;
+    line-height: 49px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: -0.25px;
+}
+.text-underline{
+    text-decoration: underline;
+}
+.btn-down-whale{
+    display: block;
+    float: left;
+    width: 68px;
+    height: 28px;
+    margin-top: 12px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 2px;
+    color: #00cbae;
+    background-color: #fff1c0;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 28px;
+}
+.btn-container-whale{
+    float: right;
+    height: 49px;
+    border: none;
+    background-color: transparent;
+}
+.btn-closetext-whale{
+    display: block;
+    height: 49px;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    /* line-height: 47px; */
+    font-size: 11px;
+    font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',helvetica,'Apple SD Gothic Neo',sans-serif;
+    float: left;
+    line-height: 47px;
+}
+.btn-close-whale{
+    float: left;
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-position: -429px -116px;
+    background-color: transparent;
+    border: none;
+    margin-left: 4px;
+    margin-top: 11px;
+}
+/* 검색창 관련 css */
+.box-container-search{
+    height: 161px;
+}
+.box-container-menu{
+    height: 50px;
+    border-top: 1px solid rgb(222,226,229);
+    border-bottom: 1px solid rgb(237,237,237);
+}
+.box-container-contents{
+    height: 2685px;
+}
+.box-container-footer{
+    height: 423px;
+    background-color: rgb(250, 251, 252);
+}
+/* 배경 이미지 클래스 */
+.bg-44265f{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
+    background-repeat: no-repeat;
+    background-size: 471px 442px;
+}
