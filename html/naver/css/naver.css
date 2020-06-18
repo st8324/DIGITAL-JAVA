@@ -136,6 +136,7 @@ body{
     top: 0;
     right: 84px;
     display: block;
+    z-index: 6;
 }
 .icon-v-keyboard{
     width: 20px;
@@ -146,6 +147,168 @@ body{
     left: 50%;
     margin: -6px 0 0 -10px;
     background-position: -400px -276px;
+}
+.box-msg-keyboard{
+    position: absolute;
+    top: 42px;
+    left: -16px;
+    width: 68px;
+    height: 37px;
+    background-position: -161px -115px;
+    display: none;
+}
+.btn-v-keyboard:hover .box-msg-keyboard{
+    display: block;
+}
+.btn-v-keyboard:hover .icon-v-keyboard{
+    background-position: -64px -404px;
+}
+.btn-auto-search{
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 56px;
+    top: 0;
+    right: 64px;
+}
+.icon-auto-search{
+    display: block;
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0 0 -5px;
+    background-position: -429px -394px;
+}
+.icon-auto-search.active{
+    background-position: -361px -308px;
+}
+.box-auto-up{
+    padding: 17px 15px 15px;
+    font-size: 12px;
+    line-height: 23px;
+}
+.box-auto-down{
+    padding: 8px 0;
+    background-color: #f9fafc;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: -1px;
+    line-height: 1.3em;
+    border-top: 1px solid #ebeef3;
+}
+.box-auto-down::after{
+    clear: both;
+    content: '';
+    display: block;
+}
+.auto-l{
+    padding: 2px 0 0 12px;
+    float: left;
+}
+.auto-r{
+    float: right;
+    padding: 2px 12px 0 0;
+}
+.link-help,
+.link-auto-close{
+    margin: 0 3px;
+    color: #666;
+}
+.link-report{
+    margin: 0 3px;
+    color: #00a617;;
+}
+.auto-bar{
+    height: 10px;
+    display: inline-block;
+    margin: -1px 4px 1px;
+    border-left: 1px solid #e3e7ee;
+    vertical-align: middle;
+}
+.box-auto-box{
+    width: 586px;
+    border: 1px solid #bec8d8;
+    position: absolute;
+    left: -2px;
+    top: 52px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 5;
+}
+.btn-search{
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    background-color: #19ce60;
+    border-radius: 0 2px 2px 0;
+    border: none;
+}
+.icon-search{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -429px -172px;
+}
+
+.box-container-service{
+    position: absolute;
+    top: 12px;
+    right: 27px;
+}
+.link-set{
+    font-size: 11px;
+    float: left;
+    color: #404040;
+}
+.link-set::after{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: -3px 0 0 3px;
+    content: '';
+    vertical-align: top;
+    background-position: -391px -225px;
+}
+.link-set:hover{
+    text-decoration: underline;
+}
+.icon-service-bar{
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 7px;
+    background-color: #e4e8eb;
+}
+.link-jr{
+    float: left;
+}
+.icon-jr{
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    margin: 3px;
+    background-position: -348px -260px;
+}
+.link-jr:hover > .icon-jr{
+    background-position : -214px -308px;
+}
+.link-happybean{
+    float: left;
+    margin-left: 6px;
+}
+.icon-happybean{
+    display: inline-block;
+    width: 34px;
+    height: 11px;
+    margin: 3px 3px 2px;
+    background-position: -253px -323px;
+}
+.link-happybean:hover > .icon-happybean{
+    background-position: -214px -323px;
 }
 /* 메뉴창 관련 css */
 .box-container-menu{
@@ -161,8 +324,12 @@ body{
     background-color: rgb(250, 251, 252);
 }
 /* 배경 이미지 클래스 */
+.link-set::after,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
     background-size: 471px 442px;
+}
+.display-none{
+    display: none !important;
 }
