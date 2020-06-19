@@ -16,4 +16,10 @@ $(function(){
 		$('.btn-auto-search').click();
 		e.preventDefault();
 	})
+	$('.btn-more').click(function(){
+		$('.box-group-keyword').toggleClass('display-none');
+		$('.box-service-menu').toggleClass('display-none');
+		$('.box-container-servicelist').toggleClass('display-none');
+		$('.btn-more').toggleClass('display-none');
+	})
 })

@@ -308,18 +308,26 @@ body{
 }
 /* 메뉴창 관련 css */
 .box-container-menu{
+    position: relative;
     height: 50px;
     border-top: 1px solid rgb(222,226,229);
     border-bottom: 1px solid rgb(237,237,237);
 }
 .box-container-green{
     padding: 11px 0;
+    float: left;
 }
 .box-menu-green{
     height: 30px;
     float: left;
+    margin-left: 18px;
 }
-.link-menu-green{
+.box-menu-green:first-of-type{
+    margin-left: 0;
+}
+.link-menu-green,
+.link-menu-black
+{
     font-size: 15px;
     font-weight: 700;
     line-height: 30px;
@@ -334,9 +342,178 @@ body{
     vertical-align: top;
     background-position: -429px -227px;
 }
+.box-menu-green.tv .icon{
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    margin: 9px 2px 0 0;
+    vertical-align: top;
+    background-position: -458px -80px;
+}
+.box-container-black{
+    padding: 11px 0;
+    float: left;
+}
+.box-menu-black{
+    float: left;
+    margin-left: 18px;
+}
+.link-menu-black{
+    color: black;
+}
+.btn-more{
+    font-size: 13px;
+    line-height: 30px;
+    float: left;
+    min-width: 70px;
+    margin-left: 17px;
+    color: #202020;
+    display: block;
+    padding: 11px 0;
+    text-align: right;
+}
+.btn-more.fold{
+    color: #0ecd5a;
+}
+.btn-more::after{
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    content: '';
+    vertical-align: 2px;
+    background-position: -458px -432px;
+    margin-left: 7px;
+}
+.btn-more.fold::after{
+    background-position: -458px -420px;
+}
+
+.box-service-menu,
+.box-group-keyword{
+    position: absolute;
+    top: 11px;
+    right: 30px;
+    overflow: hidden;
+    width: 210px;
+    height: 30px;
+}
+.box-service-menu{
+    width: 220px;
+}
+.icon-error{
+    display: inline-block;
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 8px 5px 0 0;
+    vertical-align: top;
+    background-position: -39px -427px;
+}
+.btn-keyword{
+    font-size: 12px;
+    display: block;
+    width: 190px;
+    padding-right: 20px;
+    height: 30px;
+}
+.btn-keyword::after{
+    position: absolute;
+    top: 11px;
+    right: 0;
+    display: inline-block;
+    width: 14px;
+    height: 9px;
+    content: '';
+    vertical-align: top;
+    background-position: -389px -211px;
+}
+.text-keyword{
+    color: #505050;
+    letter-spacing: -.5px;
+    line-height: 30px;
+    display: block;
+    height: 30px;
+}
+.box-container-servicelist{
+    height: 332px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 51px;
+    left: 0;
+    z-index: 4;
+}
+.box-container-servicelist>.container{
+    padding: 20px 30px 22px;
+    display: flex;
+}
+.box-list-service{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #e4e8eb;
+    padding: 0 18px 0 19px;
+}
+.box-list-service:last-of-type{
+    border-right: 1px solid #e4e8eb;
+    padding: 0 18px;
+}
+.box-service-title{
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000;    
+    margin-bottom: 3px;
+}
+.link-service{
+    font-size: 13px;
+    line-height: 26px;
+    display: block;
+    color: #000;
+}
+.link-more{
+    margin-top: 5px;
+    color: gray;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 26px;
+}
+.link-more::after{
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    margin-left: 7px;
+    vertical-align: 0;
+    background-position: -417px -116px;
+    content: '';
+}
+.link-service-more,
+.btn-menu-set{
+    display: block;
+    float: left;
+    margin-left: 3px;
+    padding: 7px 13px 5px;
+    border: 1px solid #dae1e6;
+    border-radius: 15px;
+    background-color: #fff;
+    text-align: right;
+    font-size: 12px;
+    line-height: 16px;
+    color: inherit;
+}
+.btn-menu-set::before{
+   display: inline-block;
+   width: 11px;
+   height: 11px;
+   margin: 2px 5px 0 0;
+   content: '';
+   vertical-align: top;
+   background-position: -458px -175px;
+}
 /* 컨텐츠 관련 css */
 .box-container-contents{
     height: 2685px;
+    background-color: yellow;
 }
 .box-container-footer{
     height: 423px;
@@ -344,6 +521,10 @@ body{
 }
 /* 배경 이미지 클래스 */
 .link-set::after,
+.btn-more::after,
+.btn-keyword::after,
+.link-more::after,
+.btn-menu-set::before,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
@@ -354,6 +535,7 @@ body{
 }
 
 .box-container-green::after,
+.box-container-black::after,
 .box-auto-down::after{
     clear: both;
     content: '';
