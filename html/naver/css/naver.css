@@ -198,11 +198,7 @@ body{
     line-height: 1.3em;
     border-top: 1px solid #ebeef3;
 }
-.box-auto-down::after{
-    clear: both;
-    content: '';
-    display: block;
-}
+
 .auto-l{
     padding: 2px 0 0 12px;
     float: left;
@@ -316,6 +312,29 @@ body{
     border-top: 1px solid rgb(222,226,229);
     border-bottom: 1px solid rgb(237,237,237);
 }
+.box-container-green{
+    padding: 11px 0;
+}
+.box-menu-green{
+    height: 30px;
+    float: left;
+}
+.link-menu-green{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: -.3px;
+    color: #03c75a;
+}
+.box-menu-green.mail .icon{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin: 3px 9px 0 0;
+    vertical-align: top;
+    background-position: -429px -227px;
+}
+/* 컨텐츠 관련 css */
 .box-container-contents{
     height: 2685px;
 }
@@ -332,4 +351,11 @@ body{
 }
 .display-none{
     display: none !important;
+}
+
+.box-container-green::after,
+.box-auto-down::after{
+    clear: both;
+    content: '';
+    display: block;
 }
