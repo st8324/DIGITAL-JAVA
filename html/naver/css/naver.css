@@ -510,6 +510,54 @@ body{
    vertical-align: top;
    background-position: -458px -175px;
 }
+.box-serivce-check{
+    font-size: 13px;
+    line-height: 26px;
+    display: flex;
+    cursor: default;
+}
+.box-serivce-check>input{
+    display: none;
+}
+.icon-check{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 4px 9px 0 0;
+    vertical-align: top;
+    background-position: -43px -404px;
+}
+.icon-check.checked{
+    background-position: -22px -404px;
+}
+.btn-service-save,
+.btn-service-init{
+    display: inline-block;
+    margin-left: 3px;
+    padding: 7px 13px 5px;
+    border: 1px solid #dae1e6;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+}
+.btn-service-init::before{
+    display: inline-block;
+    width: 10px;
+    height: 13px;
+    margin-right: 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -157px;
+}
+.btn-service-save{
+    background-color: #19ce60;
+    border-color: #00c73c;
+    color: #fff;
+}
+.box-service-menu.set{
+    text-align: right;
+}
 /* 컨텐츠 관련 css */
 .box-container-contents{
     height: 2685px;
@@ -525,6 +573,7 @@ body{
 .btn-keyword::after,
 .link-more::after,
 .btn-menu-set::before,
+.btn-service-init::before,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
