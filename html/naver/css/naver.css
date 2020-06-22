@@ -558,6 +558,22 @@ body{
 .box-service-menu.set{
     text-align: right;
 }
+.box-menu-black.box-empty{
+    width: 68px;
+    height: 28px;
+    border: 1px solid #dae1e6;
+    border-radius: 2px;
+    background-color: #f7f9fa;
+    margin-left: 8px;
+    float: left;
+}
+.box-menu-black.box-empty:first-of-type{
+    margin-left: 18px;
+}
+.box-menu-black.box-empty.select{
+    border-color: #19ce60;
+    background-color: #fff;
+}
 /* 컨텐츠 관련 css */
 .box-container-contents{
     height: 2685px;
