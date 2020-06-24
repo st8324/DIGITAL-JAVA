@@ -786,6 +786,100 @@ box-direct-area{
     background-position: 0 -427px;
     vertical-align: top;
 }
+.box-row{
+    display: flex;
+}
+.box-thumb-area{
+    height: 65px;
+    width: 100%;
+    padding: 23px 0 22px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.line-row1,.line-row2,.line-row3,
+.line-col1,.line-col2,.line-col3,.line-col4,.line-col5,.line-col6,.line-col7{
+    position: absolute;
+    z-index: 1;
+    background-color: #e4e8eb;
+}
+.line-row1,.line-row2,.line-row3{
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+.line-row1{    top: 65px;}
+.line-row2{    top: 130px;}
+.line-row3{    top: 195px;}
+.line-col1,.line-col2,.line-col3,.line-col4,.line-col5,.line-col6,.line-col7{
+    top: 0;
+    bottom: 0;
+    width: 1px;
+}
+.line-col2{     left: 125px;}
+.line-col3{     left: 250px;}
+.line-col4{     left: 375px;}
+.line-col5{     left: 500px;}
+.line-col6{     left: 625px;}
+.line-col7{     left: 750px;}
+.box-thumb{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f7f9fa;
+    padding: 19px 0 18px;
+    text-align: center;
+    font-size: 0;
+}
+.btn-subs,.btn-view{
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 7px 8px 5px;
+    vertical-align: top;
+    color: #505050;
+    border: 1px solid #dae1e6;
+    background-color: #fff;
+}
+.btn-subs{
+    border-right: none;
+}
+.btn-subs.active, .btn-view.active{
+    border-color: #bec8d8;
+}
+.btn-view.disable{
+    border-left-color: #bec8d8;
+}
+.btn-news-prev,.btn-news-next{
+    top: 109px;
+    position: absolute;
+    z-index: 10;
+    width: 44px;
+}
+.btn-news-prev{
+    left: -27px;
+}
+.btn-news-next{
+    right: -27px;
+}
+.icon-news-prev,.icon-news-next{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    vertical-align: top;
+    background-position: 0 -308px;
+}
+.icon-news-next{
+    background-position: -49px -308px;
+}
+.btn-news-prev:hover .icon-news-prev{
+    background-position: -227px -161px;
+}
+.btn-news-next:hover .icon-news-next{
+    background-position: -98px -308px;
+}
 /* 푸터 관련 css */
 .box-container-footer{
     height: 423px;
