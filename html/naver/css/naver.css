@@ -574,6 +574,7 @@ body{
     border-color: #19ce60;
     background-color: #fff;
 }
+
 /* 컨텐츠 관련 css */
 .box-container-contents{
     height: 2685px;
@@ -585,6 +586,8 @@ body{
     height: 1000px;
     padding: 20px 0;
 }
+
+/* 왼쪽 첫번째 컨텐츠 */
 .box-left1{
     height: 135px;
     margin-bottom: 12px;
@@ -592,6 +595,8 @@ body{
 .box-left1>a{
     display: block;
 }
+
+/* 왼쪽 두번째 컨텐츠 */
 .box-left2{
     padding: 12px 15px 11px 15px;
     background-color: #f7f9fa;
@@ -672,6 +677,115 @@ box-direct-area{
     height: 1000px;
     padding: 20px 0;
 }
+
+/* 왼쪽 세번째 컨텐츠 */
+.box-group-title{
+    padding: 22px 0 16px;
+    line-height: 18px;
+    font-size: 14px;
+}
+.box-group-contents{
+    height: 262px;
+    border: 1px solid #dae1e6;
+    border-width: 1px 0;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+}
+.link-newstand{
+   float: left; 
+   font-weight: 700;
+   color: #000;
+   font-size: 14px;
+   line-height: 18px;
+}
+.link-newstand::before{
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    margin: -6px 1px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -293px -357px;
+}
+.link-newstand::after{
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    margin-left: 6px;
+    content: '';
+    vertical-align: -1px;
+    background-position: -417px -58px;
+}
+.btn-sort{
+    font-size: 14px;
+    line-height: 18px;
+    color: #505050;
+    float: left;
+    margin-left: 10px;
+    letter-spacing: -.2px;
+}
+.btn-sort-all{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #000;
+    float: left;
+}
+.btn-sort-all::before{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px 0 8px;
+    content: '';
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #c7ccd1;
+}
+.btn-set{
+    float: left;
+    padding: 0 9px;
+    line-height: 18px;
+}
+.icon-list{
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    vertical-align: top;
+    opacity: 0.7;
+    background-position: -77px -427px;
+}
+.icon-list.hover,
+.icon-title.hover,
+.icon-set.hover{
+    opacity: 1;
+}
+.icon-list.set{
+    opacity: 1;
+    background-position: -96px -427px;
+}
+
+.icon-title{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    background-position: -458px -62px;
+    opacity: 0.7;
+}
+.icon-title.set{
+    background-position: -458px -44px;
+    opacity: 1;
+}
+.icon-set{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: -1px 0 1px;
+    opacity: 0.7;
+    background-position: 0 -427px;
+    vertical-align: top;
+}
 /* 푸터 관련 css */
 .box-container-footer{
     height: 423px;
@@ -685,6 +799,8 @@ box-direct-area{
 .btn-menu-set::before,
 .btn-service-init::before,
 .link-media::after,
+.link-newstand::before,
+.link-newstand::after,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
@@ -697,8 +813,15 @@ box-direct-area{
 .box-container-green::after,
 .box-container-black::after,
 .box-left2::after,
-.box-auto-down::after{
+.box-auto-down::after,
+.box-group-title::after{
     clear: both;
     content: '';
     display: block;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
 }
