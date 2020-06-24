@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>롤링 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.add{
+			width: 750px;
+			height: 135px;
+			margin: 0 auto;
+			margin-top: 50px;
+			border: 1px solid black;
+			overflow: hidden;
+		}
+		.link-add{
+			display: block;
+			height: 135px;
+		}
+		.link-add>img{
+			float: left;	
+		}
+		.link-add:first-of-type{
+			margin-top: -270px;
+		}
+	</style>
+</head>
+<body>
+	<div class="add">
+		<a href="#" class="link-add">
+			<img src="https://ssl.pstatic.net/tveta/libs/1282/1282632/f5d52b67356d647d98f6_20200622094726737.jpg" alt="" width="750px" height="135px">
+		</a>
+		<a href="#" class="link-add">
+			<img src="https://ssl.pstatic.net/tveta/libs/1282/1282740/b7de4ced147a82421056_20200618185424423.jpg" alt="" width="750px" height="135px">
+		</a>
+		<a href="#" class="link-add">
+			<img src="../day30/dog.jpg" alt="" width="750px" height="135px">
+		</a>
+	</div>
+	<script>
+
+		$(function(){
+			setInterval(function(){
+				$('.link-add').first()
+					.animate({'margin-top':'-135px'},300,function(){
+						$('.link-add').last().detach().prependTo('.add')
+							.css('margin-top','-270px');
+						$(this).removeAttr('style');
+						/*
+						$(A).prepend(B) : A요소 안의 제일 앞에 B를 html코드로 추가해라
+						$(A).prependTo(B) : B요소 안의 제일 앞에 A를 html코드로 추가해라
+						*/
+					});
+			},1000)
+		})
+	</script>
+</body>
+</html>
