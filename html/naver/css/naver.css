@@ -610,6 +610,7 @@ box-direct-area{
     margin-right: 7px;
     line-height: 24px;
     letter-spacing: -.2px;
+    color: #000;
 }
 .link-media::after{
     display: inline-block;
