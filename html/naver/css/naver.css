@@ -880,6 +880,242 @@ box-direct-area{
 .btn-news-next:hover .icon-news-next{
     background-position: -98px -308px;
 }
+/* 오른쪽 첫번째 컨텐츠 css */
+.box-right1{
+    width: 100%;
+    height: 135px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+    box-sizing: border-box;
+    padding: 16px 16px 12px 17px;
+}
+.msg-login{
+    padding-left: 3px;
+    color: gray;
+    line-height: 16px;
+    font-size: 12px;
+    letter-spacing: -0.2px;
+}
+.link-login{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 11px;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #15c654;
+    border-radius: 2px;
+    background-color: #19ce60;
+    line-height: 16px;
+}
+.icon-login-naver{
+    display: inline-block;
+    width: 60px;
+    height: 12px;
+    margin: 2px 5px 0 0;
+    vertical-align: top;
+    background-position: -270px -276px;
+    line-height: 16px;
+}
+.box-sub-area{
+    margin: 14px 8px 0 4px;
+}
+.link-join{
+    float: right;
+    color: #505050;
+    font-size: 12px;
+    line-height: 16px;
+}
+.link-join::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 2px 5px 0 0;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -207px;
+}
+.box-look{
+    float: left;
+    line-height: 16px;
+}
+.box-look::before{
+    display: inline-block;
+    width: 10px;
+    height: 14px;
+    margin: -1px 5px 1px 1px;
+    content: '';
+    vertical-align: top;
+    background-position: -458px -138px;
+    float: left;
+}
+.link-find-id,.link-find-pw{
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+    color: #404040;
+    float: left;
+}
+.link-find-pw::before{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin: 0 5px 0 5px;
+    content: '';
+    vertical-align: 3px;
+    border-radius: 50%;
+    background-color: #d7dcde;
+}
+/* 오른족 두번째 컨텐츠  */
+.box-right2{
+    height: 47px;
+    border: 1px solid #dae1e6;
+    margin: 12px 0;
+    letter-spacing: -0.25px;
+    background-color: #fff;
+    position: relative;
+}
+.box-card-wrap{
+    height: 100%;
+    padding-right: 67px;
+    overflow: hidden;
+}
+.box-card-nav{
+    height: 100%;
+    width: 500%;
+    overflow: hidden;
+}
+.box-card1{
+    width: 281px;
+    padding: 14px 0 13px 16px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+}
+.badge-news{
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    float: left;
+    height: 18px;
+    margin-right: 8px;
+    padding: 0 7px;
+    vertical-align: top;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    color: #202020;
+    font-style: normal;
+}
+.text-news{
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #404040;
+}
+.box-card2{
+    font-size: 13px;
+    line-height: 29px;
+    display: block;
+    width: 281px;
+    overflow: hidden;
+    padding: 9px 0 9px 16px;
+    float: left;
+    box-sizing: border-box;
+}
+.box-card2::before{
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    vertical-align: top;
+    background-position: 0 -68px;
+    content: '';
+    margin-right: 9px;
+    float: left;
+}
+.text-current{
+    font-size: 15px;
+    vertical-align: top;
+    color: #202020;
+}
+.text-state{
+    font-size: 13px;
+    color: #202020;
+}
+.text-dgree-max,.text-dgree-min{
+    font-size: 13px;
+    line-height: 29px;
+}
+.text-dgree-min{
+    color: #2586ee;
+}
+.text-dgree-min::before{
+    display: inline-block;
+    width: 5px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    content: '';
+    vertical-align: -1px;
+    background-position: -417px -131px;
+}
+.text-dgree-max{
+    color: #e9564a;
+}
+.box-current{
+    float: left;
+}
+.box-dgree{
+    float: left;
+    margin-left: 9px;
+}
+.box-location{
+    float: right;
+    font-size: 12px;
+    color: gray;
+    line-height: 29px;
+}
+.box-btn{
+    width: 67px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+}
+.box-btn-wrap{
+    position: absolute;
+    top: 11px;
+    right: 10px;
+}
+.btn-nav-prev,.btn-nav-next{
+    float: left;
+    border: 1px solid #e4e8eb;
+    background-color: #fff;
+}
+.btn-nav-next{
+    margin-left: -1px;
+}
+.btn-nav-prev::before{
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -265px -218px;
+}
+.btn-nav-next::before{
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 7px 8px 6px;
+    content: '';
+    vertical-align: top;
+    background-position: -417px -147px;
+}
 /* 푸터 관련 css */
 .box-container-footer{
     height: 423px;
@@ -895,10 +1131,20 @@ box-direct-area{
 .link-media::after,
 .link-newstand::before,
 .link-newstand::after,
+.link-join::before,
+.box-look::before,
+.text-dgree-min::before,
+.btn-nav-prev::before,
+.btn-nav-next::before,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
     background-size: 471px 442px;
+}
+.box-card2::before{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_weather_time.284fc7.png);
+    background-size: 199px 165px;
+    background-repeat: no-repeat;
 }
 .display-none{
     display: none !important;
@@ -908,7 +1154,8 @@ box-direct-area{
 .box-container-black::after,
 .box-left2::after,
 .box-auto-down::after,
-.box-group-title::after{
+.box-group-title::after,
+.box-sub-area::after{
     clear: both;
     content: '';
     display: block;
