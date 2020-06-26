@@ -1116,6 +1116,143 @@ box-direct-area{
     vertical-align: top;
     background-position: -417px -147px;
 }
+/* 왼쪽 네번째 컨텐츠 css */
+.box-left4{
+    padding: 35px 0 27px;
+}
+.area-title{
+    font-size: 0;
+    float: left;
+}
+.area-title .title{
+    font-size: 14px;
+    color: #000;
+    line-height: 16px;
+}
+.area-title .dsc{
+    margin-left: 8px;
+    color: gray;
+    font-size: 12px;
+    line-height: 16px;
+}
+.area-info{
+    float: right;
+}
+.area-info .info{
+    color: gray;
+    line-height: 16px;
+    font-size: 12px;
+}
+.area-info .info strong{
+    color: #000;
+}
+.area-info .btn-setting{
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    margin-left: 14px;
+    color: #505050;
+}
+.area-info .btn-setting::before{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    content: '';
+    vertical-align: -1px;
+    opacity: 0.7;
+    background-position: -458px -223px;
+}
+.area-info .btn-setting:hover{
+    text-decoration: underline;
+}
+.area-info .btn-setting:hover::before{
+    opacity: 1;
+}
+.area-info .btn-setting::after{
+    position: absolute;
+    top: 2px;
+    left: -8px;
+    width: 1px;
+    height: 12px;
+    content: '';
+    background-color: #e4e8eb;
+}
+.box-theme-wrap{
+    height: 49px;
+    width: 100%;
+    position: relative;
+}
+.box-theme-container{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.box-theme-wrap .list-category::before{
+    border: 1px solid #dae1e6;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.box-theme-wrap .list-category{
+    background-color: #fff;
+    height: 100%;
+    width: 400%;
+}
+.box-theme-wrap .list-category .category-item{
+    width: 94px;
+    height: 100%;
+    float: left;
+    z-index: 1;
+    position: relative;
+}
+.box-theme-wrap .list-category .category-item:first-child,
+.box-theme-wrap .list-category .category-item:nth-child(9),
+.box-theme-wrap .list-category .category-item:nth-child(17),
+.box-theme-wrap .list-category .category-item:nth-child(25){
+    width: 92px;
+}
+.box-theme-wrap .list-category .category-item .btn-tab{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 49px;
+    text-align: center;
+    color: #202020;
+    border-right: 1px solid #dae1e6;
+}
+.box-theme-wrap .list-category .category-item .btn-tab[aria-selected=true]{
+    position: relative;
+    margin: 0 -1px;
+    border-radius: 1px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #1a2f63;
+    color: #fff;
+}
+.box-theme-wrap .btn-prev{
+    top: 6px;
+    left: -23px;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -47px -357px;
+}
+.box-theme-wrap .btn-next{
+    top: 6px;
+    right: -23px;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -92px -357px;
+}
 /* 푸터 관련 css */
 .box-container-footer{
     height: 423px;
@@ -1136,6 +1273,7 @@ box-direct-area{
 .text-dgree-min::before,
 .btn-nav-prev::before,
 .btn-nav-next::before,
+.area-info .btn-setting::before,
 .bg-44265f{
     background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
     background-repeat: no-repeat;
@@ -1155,6 +1293,7 @@ box-direct-area{
 .box-left2::after,
 .box-auto-down::after,
 .box-group-title::after,
+.box-theme-title::after,
 .box-sub-area::after{
     clear: both;
     content: '';

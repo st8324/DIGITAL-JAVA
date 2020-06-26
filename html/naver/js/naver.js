@@ -159,6 +159,9 @@ $(function(){
 	})
 	
 	$('.btn-nav-prev').click(function(){
+		/* .box-card-nav>.card 요소가 애니메이션 중이 아니면 동작하고,
+		애니메이션 중이면 아무일도 안함
+		*/
 		if(!$('.box-card-nav>.card').is(':animated')){
 			$('.box-card-nav>.card').last().detach().prependTo('.box-card-nav').css('margin-left','-281px');
 			$('.box-card-nav>.card').first().animate({'margin-left':'0'},500)
@@ -171,6 +174,70 @@ $(function(){
 			})
 		}
 	})
+	$('.box-theme-wrap .btn-tab').click(function(e){
+		e.preventDefault();
+		$('.box-theme-wrap .btn-tab').attr('aria-selected','false');
+		$(this).attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+		/*
+		$(선택자).attr('속성명','값A') : 해당 요소의 속성의 값을 값A로 설정
+		$(선택자).attr('속성명') : 해당 요소의 속성의 값을 가져옴
+		$(선택자).prop('속성명','값A') : 해당 요소의 속성의 값을 값A로 설정
+		$(선택자).prop('속성명') : 해당 요소의 속성의 값을 가져옴
+		 */
+	})
+	$('.box-theme-wrap .btn-prev').click(function(e){
+		e.preventDefault();
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-job')){
+			$('.list-category').animate({'margin-left':'0px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-book')){
+			$('.list-category').animate({'margin-left':'-750px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-show')){
+			$('.list-category').animate({'margin-left':'-1500px'},1000)
+		}
+
+		$('.btn-tab[aria-selected=true]').attr('aria-selected','false').
+			parent().prev().find('.btn-tab').attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+	})
+	$('.box-theme-wrap .btn-next').click(function(e){
+		e.preventDefault();
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-movie')){
+			$('.list-category').animate({'margin-left':'-750px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-marry')){
+			$('.list-category').animate({'margin-left':'-1500px'},1000)
+		}
+		if($('.btn-tab[aria-selected=true]').hasClass('tab-farm')){
+			$('.list-category').animate({'margin-left':'-2250px'},1000)
+		}
+
+		$('.btn-tab[aria-selected=true]').attr('aria-selected','false').
+			parent().next().find('.btn-tab').attr('aria-selected','true');
+		themeBtnView();
+		themeBodyView();
+	})
+	themeBodyView();
+	function themeBodyView(){
+		var target = $('.btn-tab[aria-selected=true]').attr('data-target');
+		$('.box-theme-body .box-body').addClass('display-none');
+		$('.box-theme-body>.'+target).removeClass('display-none');
+	}
+	themeBtnView();
+	function themeBtnView(){
+		$('.box-theme-wrap .btn-prev').removeClass('display-none');
+		$('.box-theme-wrap .btn-next').removeClass('display-none');
+		if($('.box-theme-wrap .btn-tab').first().attr('aria-selected') == 'true'){
+			$('.box-theme-wrap .btn-prev').addClass('display-none');
+		}
+		if($('.box-theme-wrap .btn-tab').last().attr('aria-selected') == 'true'){
+			$('.box-theme-wrap .btn-next').addClass('display-none');
+		}
+	}
 	function initMenu(){
 		$('.box-service-menu.display').addClass('display-none');
 		$('.box-service-menu.set').addClass('display-none');
