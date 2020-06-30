@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>애니메이트 예제2</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.box-view{
+			width: 400px;
+			height: 200px;
+			border: 2px solid red;
+			overflow: hidden;
+		}
+		.box-container{
+			width: 1200px;
+			height: 100%;
+		}
+		.box{
+			width: 400px;
+			height: 100%;
+			background-color: skyblue;
+			float: left;
+		}
+		.box:nth-of-type(2){	background-color: slateblue;}
+		.box:nth-of-type(3){	background-color: springgreen;}
+		.box-container{	margin-left: -800px;}
+	</style>
+</head>
+<body>
+	<div class="box-view">
+		<div class="box-container">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+	</div>
+	<button>이동</button>
+	<script>
+		$(function(){
+			var cnt = 2;
+			$('button').click(function(){
+				var gap = -400;
+				cnt--;
+				gap = (gap*cnt)+'px';
+				if(cnt<0){
+					gap = '0px';
+				}
+				$('.box-container').animate({'margin-left':gap},1000);
+			})
+		})
+	</script>
+</body>
+</html>

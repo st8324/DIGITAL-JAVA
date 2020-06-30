@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>에니메이트 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.box-container{
+			height: 300px;
+			position: relative;
+		}
+		.box2{
+			float: left;
+		}
+		.box3{
+			position: absolute;
+			top: 200px;
+			left: 0;
+		}
+		/* css의 속성 left는 position 속성에 따라 적용될수 있고
+		안될 수 있다. static(기본)은 적용 안됨  */
+	</style>
+</head>
+<body>
+	<div class="box-container">
+		<div class="box1 box"></div>
+		<div class="box2 box"></div>
+		<div class="box3 box"></div>
+	</div>
+	<button class="btn-move1">박스1 이동</button>
+	<button class="btn-move2">박스2 이동</button>
+	<button class="btn-move3">박스3 이동</button>
+	<script>
+		/*
+		animate()함수를 이용할 수 있는가?
+		css 속성을 정확히 이해하는가?
+		*/
+		$(function(){
+			$('.btn-move1').click(function(){
+				$('.box1').animate({'margin-left':'500px'},1000,function(){
+					$(this).animate({'margin-left':'0px'},1000)
+				});
+			})
+			$('.btn-move2').click(function(){
+				//적용안됨. float와 같이 숫자로 표현할 수 없는 속성들은
+				//animate를 적용할 수 없다. 이와 같은 속성이로는
+				//transition, transfrom등이 있다.
+				$('.box2').animate({'float':'right'},1000);
+			})
+			$('.btn-move3').click(function(){
+				$('.box3').animate({'left':'500px'},1000,function(){
+					$(this).animate({'left':'0px'},1000)
+				});
+			})
+		})
+	</script>
+</body>
+</html>
