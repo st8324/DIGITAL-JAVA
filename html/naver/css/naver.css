@@ -1330,6 +1330,93 @@ box-direct-area{
 .box-shop-body{
     border: 1px solid #e4e8eb;
 }
+.box-goods{
+    position: relative;
+    padding: 55px 7px 16px 9px;
+}
+.goods-item{
+    float: left;
+    width: 107px;
+    margin-top: 18px;
+    margin-right: 5px;
+}
+.goods-item img{
+    width: 107px;
+    height: 146px;
+}
+.goods-item p{
+    margin-top: 9px;
+}
+.goods-item p>span{
+    line-height: 18px;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #404040;
+}
+.list-goods{
+    margin-right: -5px;
+}
+.box-shop-control>.box-num{
+    float: left;
+    color: gray;
+    padding: 5px 0;
+    text-align: right;
+    font-size: 12px;
+    line-height: 16px;
+}
+.box-shop-control>.box-num>.current-num{
+    color: #202020;
+    font-weight: bold;
+}
+.box-shop-control{
+    position: absolute;
+    top: 15px;
+    right: 8px;
+}
+.box-shop-control>.box-btn{
+    float: left;
+    margin-left: 7px;
+    position: static;
+    width: auto;
+}
+.box-shop-control>.box-btn>.btn-prev,
+.box-shop-control>.box-btn>.btn-next
+{
+    border: 1px solid #dae1e6;
+    background-color: #fff;
+    float: left;
+}
+.box-shop-control>.box-btn>.btn-next{
+    border-left: none;
+}
+.box-shop-control>.box-btn>.btn-next::before,
+.box-shop-control>.box-btn>.btn-prev::before{
+    display: block;
+    width: 5px;
+    height: 9px;
+    margin: 8px 10px 7px 8px;
+    content: '';
+    background-position: 0 -29px;
+}
+.box-shop-control>.box-btn>.btn-next::before{
+    background-position: -39px 0;
+}
+.box-shop-control>.box-btn>.btn-prev:hover.btn-prev::before{
+    background-position: -39px -14px;
+}
+.box-shop-control>.box-btn>.btn-next:hover.btn-next::before{
+    background-position: -29px -14px;
+}
+.box-shop-control>.box-btn>a:hover{
+    background-color: #fafbfc
+}
+.box-mall{
+    position: relative;
+}
 /* 푸터 관련 css */
 .box-container-footer{
     height: 423px;
@@ -1361,6 +1448,12 @@ box-direct-area{
     background-size: 199px 165px;
     background-repeat: no-repeat;
 }
+.box-shop-control>.box-btn>.btn-next::before,
+.box-shop-control>.box-btn>.btn-prev::before{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_shop.2ab465.png);
+    background-repeat: no-repeat;
+    background-size: 44px 38px;
+}
 .display-none{
     display: none !important;
 }
@@ -1374,6 +1467,7 @@ box-direct-area{
 .box-right3>a::after,
 .box-shop-middle>.box-mall::after,
 .box-shop-header::after,
+.list-goods::after,
 .box-sub-area::after{
     clear: both;
     content: '';
