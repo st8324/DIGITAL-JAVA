@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>클릭 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			display: inline-block;
+		}
+		.box1{	background-color: #ff0000;}
+		.box2{	background-color: rgb(0,0,255);}
+		.box3{	background-color: violet;}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<script>
+		$(function(){
+			/* 
+			1. 동일한 기능을 하는 요소들의 이벤트를 하나의 이벤트로 
+			   적용할 수 있는가?
+			2. css() 함수를 사용할 수 있는가?
+			*/
+			$('.box').click(function(){
+				var color = $(this).css('background-color');
+				alert(color);
+			})
+		})
+	</script>
+</body>
+</html>
