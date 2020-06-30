@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>애니메이트 예제2</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		.box-view{
+			width: 400px;
+			height: 200px;
+			border: 2px solid red;
+			overflow: hidden;
+		}
+		.box-container{
+			width: 1600px;
+			height: 100%;
+		}
+		.box{
+			width: 400px;
+			height: 100%;
+			background-color: skyblue;
+			float: left;
+		}
+		.box2{	background-color: slateblue;}
+		.box3{	background-color: springgreen;}
+		.box-container{	margin-left: -800px;}
+	</style>
+</head>
+<body>
+	<div class="box-view">
+		<div class="box-container">
+			<div class="box box1"></div>
+			<div class="box box2"></div>
+			<div class="box box3"></div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			var intervalId = interval();
+			$('.box-view').hover(function(){
+				clearInterval(intervalId);
+			},function(){	
+				intervalId = interval();
+			})
+			function interval(){
+				return setInterval(function(){
+					//.box요소들이 에니메이션 동작중이지 않으면
+					if(!$('.box').is(':animated')){
+						$('.box').first().animate({'margin-left':'400px'},1000,function(){
+							$('.box').last().detach().prependTo('.box-container')
+							$(this).removeAttr('style');
+						})
+					}
+				},1100)
+			}
+		})
+	</script>
+</body>
+</html>
