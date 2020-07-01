@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.ham{
+			width: 50px;
+			height: 50px;
+			display: block;
+			float: right;
+			border: 1px solid transparent;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 48px;
+			font-size: 30px;
+			color: #000;
+		}
+		.ham:hover{
+			border-color: red;
+		}
+		.display-none{
+			display: none !important;
+		}
+		.box-side{
+			width: 200px;
+			height: 400px;
+			position: absolute;
+			top: 50px;
+			right: -200px;
+			background-color: whitesmoke;
+		}
+		body{
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="#" class="ham">
+			<i class="fas fa-bars"></i>
+			<i class="fas fa-times display-none"></i>
+		</a>
+	</nav>
+	<div class="box-side"></div>
+	<script>
+		/* 햄버거 메뉴를 클릭하면 사이드 메뉴가 나오고 닫기 
+		버튼을 클릭하면 사이드 메뉴가 들어가는 예제*/
+		$(function(){
+			$('.ham').click(function(){
+				if(!$('.box-side').is(':animated')){
+					//x버튼을 클릭
+					if($('.fa-bars').hasClass('display-none')){
+						$('.box-side').animate({'right':'-200px'},1000);
+					}
+					//햄버거 버튼을 클릭
+					else{
+						$('.box-side').animate({'right':'0'},1000);
+					}
+					$('.fa-bars').toggleClass('display-none');
+					$('.fa-times').toggleClass('display-none');
+				}
+			})
+		})
+	</script>
+</body>
+</html>
