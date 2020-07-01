@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>팝업 예제</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		.box-modal-bg{
+			position: absolute;
+			top: 0;					left: 0;
+			right: 0;				bottom: 0;
+			background-color: #000;
+			opacity: 0.7;
+		}
+		.box-modal-login{
+			position: absolute;
+			background-color: #fff;
+			width: 400px;
+			height: 300px;
+			left: calc(50vw - 200px);
+			top: calc(50vh - 150px);
+		}
+		input[name=id], input[name=pw]{
+			width: 90%;
+			display: block;
+			margin: 20px auto;
+			border: 1px solid black;
+			height: 50px;
+			border-radius: 5px;
+		}
+		.btn-submit{
+			width: 90%;
+			display: block;
+			margin: 10px auto;
+			height: 50px;
+			border-radius: 5px;
+			border: 1px solid black;
+		}
+		.text-login{
+			text-align: center;
+		}
+		.btn-close{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			font-size: 16px;
+			color: #000;
+		}
+		.display-none{
+			display: none !important;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn-login" data-target=".box-modal">로그인</button>
+	<div class="box-modal display-none">
+		<div class="box-modal-bg"></div>
+		<div class="box-modal-login">
+			<h1 class="text-login">로그인</h1>
+			<a href="#" class="btn-close" data-target=".box-modal">
+				<i class="fas fa-times"></i>
+			</a>
+			<form action="">
+				<input type="text" name="id">
+				<input type="password" name="pw">
+				<button class="btn-submit">로그인</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		/* 로그인 버튼을 클릭하면 로그인 화면이 modal창으로 나오고,
+		x버튼을 누르면 로그인 화면을 닫는 예제
+		*/
+		$(function(){
+			$('button,.btn-close').click(function(){
+				var target = $(this).attr('data-target');
+				$(target).toggleClass('display-none');
+			})
+		})
+	</script>
+</body>
+</html>
