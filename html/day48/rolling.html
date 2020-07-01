@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>애니메이트 예제2</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		.box-view{
+			width: 400px;
+			height: 200px;
+			border: 2px solid red;
+			overflow: hidden;
+			position: relative;
+		}
+		.box-container{
+			width: 1600px;
+			height: 100%;
+		}
+		.box{
+			width: 400px;
+			height: 100%;
+			background-image: url(https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg);
+			float: left;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.box2{	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTkzqktVwyNXtZ0ZVqL7-uCJxjphJjhe4axQ&usqp=CAU);}
+		.box3{	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQs-aCcx3DCRXF4MJ_0TfgvQmGPLKBL8BJX-A&usqp=CAU);}
+		.box-container{	margin-left: -800px;}
+		.btn-next,.btn-prev{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			font-size: 20px;
+			line-height: 30px;
+			display: block;
+			top: 85px;
+			text-align: center; /* 아이콘은 글자처럼 가운데 정렬이 가능*/
+			color: #fff;/* 아이콘은 글자색을 따름*/
+		}
+		.btn-next{
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box-view">
+		<div class="box-container">
+			<div class="box box1"></div>
+			<div class="box box2"></div>
+			<div class="box box3"></div>
+		</div>
+		<a href="#" class="btn-prev">
+			<i class="fas fa-angle-left"></i>
+		</a>
+		<a href="#" class="btn-next">
+			<i class="fas fa-angle-right"></i>
+		</a>
+	</div>
+	<script>
+		/* 이미지가 롤링 되고, 버튼을 클릭하면 이미지가 이동하는
+		예제 : 부트스트랩의 carousel 기능과 유사*/
+		$(function(){
+			var intervalId = interval();
+
+			$('.box-view').hover(function(){
+				clearInterval(intervalId);
+			},function(){	
+				intervalId = interval();
+			})
+			$('.btn-next').click(function(e){
+				e.preventDefault();
+				if(!$('.box').is(':animated')){
+					$('.box').first().animate({'margin-left':'400px'},1000,function(){
+						$('.box').last().detach().prependTo('.box-container')
+						$(this).removeAttr('style');
+					})
+				}
+			})
+			$('.btn-prev').click(function(e){
+				e.preventDefault();
+				if(!$('.box').is(':animated')){
+					$('.box').first().detach().appendTo('.box-container');
+					$('.box').first().css('margin-left','400px');
+					$('.box').first().animate({'margin-left':'0'},1000);
+				}
+			})
+			function interval(){
+				return setInterval(function(){
+					//.box요소들이 에니메이션 동작중이지 않으면
+					if(!$('.box').is(':animated')){
+						$('.box').first().animate({'margin-left':'400px'},1000,function(){
+							$('.box').last().detach().prependTo('.box-container')
+							$(this).removeAttr('style');
+						})
+					}
+				},1100)
+			}
+		})
+	</script>
+</body>
+</html>
