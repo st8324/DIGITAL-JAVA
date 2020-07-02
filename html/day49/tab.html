@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		.main-menu{
+			overflow: hidden;
+			width: 100%;
+			position: relative;
+		}
+		.main-menu>ul{
+			list-style: none;
+			display: flex;
+			padding: 0;
+			margin: 0;
+			width: 200%;
+		}
+		.main-menu li{
+			width: 100%;
+		}
+		.main-menu li>a{
+			width: 100%;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			text-align: center;
+			line-height: 48px;
+			display: block;
+			color: black;
+			border-right: none;
+			text-decoration: none;
+			font-size: 20px;
+		}
+		.main-menu li:last-child > a,
+		.main-menu li:nth-child(3) > a{
+			border-right: 1px solid black;
+		}
+		.container{
+			margin-top: 20px;
+			width: 100%;
+			border: 1px solid black;
+			height: 500px;
+			box-sizing: border-box;
+		}
+		.main-menu li>a[aria-selected=true]{
+			background-color: blanchedalmond;
+		}
+		.main-menu>.btn-prev,
+		.main-menu>.btn-next{
+			display: block;
+			width: 50px;
+			height: 50px;
+			top: 0;
+			position: absolute;
+			border: 1px solid black;
+			text-align: center;
+			font-size: 25px;
+			line-height: 48px;
+			box-sizing: border-box;
+			background-color: #fff;
+			color: #000;
+		}
+		.main-menu>.btn-next{
+			right: 0;
+		}
+		.main-menu>.btn-prev{
+			left: 0;
+		}
+		.display-none{
+			display: none !important;
+		}
+	</style>
+</head>
+<body>
+	<nav class="main-menu">
+		<a href="#" class="btn-prev">
+			<i class="fas fa-angle-left"></i>
+		</a>
+		<a href="#" class="btn-next">
+			<i class="fas fa-angle-right"></i>
+		</a>
+		<ul>
+			<li><a href="#" aria-selected="true" data-target=".box1">메뉴1</a></li>
+			<li><a href="#" data-target=".box2">메뉴2</a></li>
+			<li><a href="#" data-target=".box3">메뉴3</a></li>
+			<li><a href="#" data-target=".box4">메뉴4</a></li>
+			<li><a href="#" data-target=".box5">메뉴5</a></li>
+			<li><a href="#" data-target=".box6">메뉴6</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<div class="box box1">컨텐츠1</div>
+		<div class="box box2">컨텐츠2</div>
+		<div class="box box3">컨텐츠3</div>
+		<div class="box box4">컨텐츠4</div>
+		<div class="box box5">컨텐츠5</div>
+		<div class="box box6">컨텐츠6</div>
+	</div>
+	<script>
+		$(function(){
+			/* a태그의 aria-selected 값이 true인 요소의 data-target과
+			일치하는 컨텐츠만 보여주고 나머지는 가려주는 함수*/
+			function viewContent(){
+				var target = $('.main-menu a[aria-selected=true]')
+											.attr('data-target');
+				$('.box').addClass('display-none');
+				$(target).removeClass('display-none');
+			}
+			function viewBtn(){
+				var target = $('.main-menu a[aria-selected=true]')
+											.attr('data-target');
+				$('.main-menu .btn-prev,.main-menu .btn-next')
+					.removeClass('display-none');
+				if(target == '.box1')
+					$('.main-menu .btn-prev').addClass('display-none')
+				if(target == '.box6')
+					$('.main-menu .btn-next').addClass('display-none')
+			}
+			viewContent();
+			viewBtn();
+			$('.main-menu li>a').click(function(e){
+				e.preventDefault();
+				$('.main-menu a').attr('aria-selected','false')
+				$(this).attr('aria-selected','true');
+				viewContent();
+				viewBtn();
+			})
+			$('.main-menu .btn-next').click(function(){
+				var target 
+				= $('.main-menu li>a[aria-selected=true]').attr('data-target');
+				if(target != '.box6'){
+					$('.main-menu li>a[aria-selected=true]')
+						.attr('aria-selected','false')//현재 선택된 메뉴의 선택을 해제
+						.parent()//현재 선택된 메뉴의 부모인 li태그
+						.next()//부모의 다음 li태그
+						.find('a')//li태그의 자손 a태그
+						.attr('aria-selected','true');
+						viewContent();
+						viewBtn();
+					if(target == '.box3'){
+						$('.main-menu ul').animate({'margin-left':'-100%'},1000);
+					}
+				}
+			})
+			$('.main-menu .btn-prev').click(function(){
+				var target 
+				= $('.main-menu li>a[aria-selected=true]').attr('data-target');
+				if(target != '.box1'){
+					$('.main-menu li>a[aria-selected=true]')
+						.attr('aria-selected','false')//현재 선택된 메뉴의 선택을 해제
+						.parent()//현재 선택된 메뉴의 부모인 li태그
+						.prev()//부모의 다음 li태그
+						.find('a')//li태그의 자손 a태그
+						.attr('aria-selected','true');
+						viewContent();
+						viewBtn();
+					if(target == '.box4'){
+						$('.main-menu ul').animate({'margin-left':'0'},1000);
+					}
+				}
+			})
+		})
+	</script>
+</body>
+</html>
