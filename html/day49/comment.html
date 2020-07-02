@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>댓글 예제</title>
+	<script src="../js/jquery.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.container{
+			width: 800px;
+			margin: 0 auto;
+		}
+		.box-title, .box-writer{
+			height: 40px;
+			line-height: 40px;
+			font-size: 20px;
+			margin: 20px 0 10px;
+		}
+		.box-writer{
+			margin: 0 0 10px;
+		}
+		.box-board{
+			min-height: 300px;
+			border: 1px solid black;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+		.box-comment-list{
+			margin-top: 10px;
+		}
+		.box-comment::after{
+			clear: both;
+			content: '';
+			display: block;
+			margin-bottom: 10px;
+			position: relative;
+		}
+		.box-comment>.box-head,
+		.box-comment-input>.box-head{
+			float: left;
+			width: 90px;
+		}
+		.box-comment>.box-body,
+		.box-comment-input>.box-body{
+			float: left;
+			margin-left: 10px;
+			width: 610px;
+			box-sizing: border-box;
+		}
+		.box-comment-input>.box-body{
+			height: 80px;
+			width: 610px;
+			font-size: 16px;
+		}
+		.box-comment-input>.btn-ok{
+			width: 80px;
+			height: 80px;
+			box-sizing: border-box;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+		.box-comment{
+			position: relative;
+		}
+		.box-comment>.box-del{
+			position: absolute;
+			line-height: 21px;
+			top: 0;
+			right: 0;
+			border: 1px solid black;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box-title">제목입니다</div>
+		<div class="box-writer">홍길동</div>
+		<div class="box-board"></div>
+		<div class="box-comments">
+			<h3>댓글</h1>
+			<div class="box-comment-list">
+				<!-- <div class="box-comment">
+					<div class="box-head">댓글1</div>
+					<div class="box-body">안녕하세요</div>
+					<div class="box-del">삭제X</div>
+				</div> -->
+			</div>
+			<div class="box-comment-input">
+				<div class="box-head">작성자</div>
+				<textarea class="box-body"></textarea>
+				<button class="btn-ok">등록</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			$('.btn-ok').click(function(){
+				var writer = $('.box-comment-input>.box-head').text();
+				var comment = $('.box-comment-input>.box-body').val();
+				var str = 
+					'<div class="box-comment">' +
+						'<div class="box-head">'+writer+'</div>' +
+						'<div class="box-body">'+comment+'</div>' +
+						'<div class="box-del">삭제X</div>'+
+					'</div>';
+				$('.box-comment-list').append(str);
+				$('.box-comment-input>.box-body').val('');
+				//추가된 삭제 버튼 클릭 이벤트를 등록
+				$('.box-comment>.box-del').click(function(){
+					$(this).parent().remove();
+				})
+			})
+		})
+	</script>
+</body>
+</html>
