@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" crossorigin="anonymous"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		nav{
+			padding: 8px 16px;
+			height: 56px;
+			background-color: #24292e;
+		}
+		.link-logo{
+			width: 32px;
+			height: 34px;
+			background-color: #fff;
+			display: inline-block;
+			float: left;
+			margin-top: 12px;
+			margin-right: 24px;
+		}
+		.main-menu>li{
+			float: left;
+			position: relative;
+		}
+		.main-menu>li>a{
+			display: block;
+			height: 56px;
+			padding: 16px 0;
+			line-height: 24px;
+			box-sizing: border-box;
+			color: #fff;
+		}
+		.sub-menu{
+			width: 300px;
+			box-shadow: 0 3px 12px rgba(12,31,35,.15),
+				0 0 1px rgba(27,31,35,.2);
+			padding: 24px;
+			border-radius: 5px;
+			position: absolute;
+			top: 56px;
+			left: -10px;
+			background-color: #fff;
+			opacity: 0;
+		}
+		.display-none{
+			display: none !important;
+		}
+		.form-search{
+			float: right;
+		}
+		.box-search{
+			width: 300px;
+			height: 36px;
+			display: block;
+			margin-top: 10px;
+			background-color: rgb(64,68,72);
+			border-radius: 5px;
+		}
+		.input-search{
+			float: left;
+			width: 273px;
+			height: 36px;
+			box-sizing: border-box;
+			padding: 8px 12px;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+			background-color: transparent;
+			color: #fff;
+		}
+		.icon-search{
+			float: right;
+			margin-top: 8px;
+			margin-right: 8px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="#" class="link-logo"></a>
+		<ul class="main-menu">
+			<li><a href="#">Why GitHub?<i class="fas fa-angle-down"></i></a>
+				<ul class="sub-menu display-none">
+					<li><a href="#">Feature</a></li>
+					<li><a href="#">Code review</a></li>
+				</ul>
+			</li>
+		</ul>
+		<form action="" class="form-search">
+			<label for="" class="box-search">
+				<input type="text" class="input-search">
+				<img class="icon-search" src="https://github.githubassets.com/images/search-key-slash.svg" alt="">
+			</label>
+		</form>
+	</nav>
+	<script>
+		$('.main-menu>li>a').hover(function(){
+			$(this).next().removeClass('display-none');
+			$(this).next().animate({'opacity':'1'},500);
+		},function () {
+			$(this).next().animate({'opacity':'0'},500,function() {
+				$(this).addClass('display-none');	
+			});
+		})
+		$('.box-search').click(function(e){
+			$(this).animate({'width':'600px','background-color':'white'},1000);
+			e.stopPropagation();
+		})
+		$('body').click(function(){
+			$('.box-search').animate({'width':'300px','background-color':'rgb(64,68,72)'},1000);
+		})
+	</script>
+</body>
+</html>
