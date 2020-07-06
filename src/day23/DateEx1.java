@@ -1,6 +1,6 @@
 package day23;
 
-import java.util.*;import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
+import java.util.*;
 
 public class DateEx1 {
 
